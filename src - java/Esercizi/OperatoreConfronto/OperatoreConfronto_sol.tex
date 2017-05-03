@@ -1,0 +1,6 @@
+\thesolution{Operatore di Confronto}
+Il metodo \cod{equals()} deve innanzitutto verificare che l'istanza di oggetto passata in ingresso sia della classe \cod{AlberoBinario}. A questo scopo si utilizza l'operatore del linguaggio \cod{instanceof}, che restituisce un valore booleano. Se questo operatore restituisce il valore \cod{false}, il metodo termina prematuramente con il valore \cod{false}. Altrimenti si procede alla verifica sull'uguaglianza strutturale tra i due alberi da confrontare.
+
+Si noti come la variabile \cod{alb} del metodo \cod{equals()} rappresenti un ulteriore riferimento all'oggetto \cod{obj}: benché i due riferimenti siano identici (puntino cioè alla medesima locazione di memoria), il loro tipo è differente e \cod{alb} può essere utilizzato come parametro attuale nella chiamata del metodo ricorsivo \cod{\_equals()}.
+
+\inputprogram{Esercizi/OperatoreConfronto/OperatoreConfronto.java}

@@ -1,0 +1,40 @@
+\exercise{Lista Della Spesa}
+Si realizzi in linguaggio Java il tipo di dato astratto \cod{ListaDellaSpesa} mediante uso del costrutto \cod{class} del linguaggio e ricorrendo ad un'implementazione dinamica. Gli elementi della lista siano del tipo \cod{Articolo}, che contiene gli attributi nome e quantità, di tipo \cod{String} e \cod{float}, rispettivamente.
+
+Di seguito si riporta la specifica dei metodi da implementare.
+
+\begin{methodslist}
+
+\method{ListaDellaSpesa}{\emptyset}{\emptyset} {
+Costruttore.
+}
+
+\method{aggiungi}{String, float}{float} {
+Aggiunge alla lista la quantità specificata in corrispondenza dell'articolo indicato. Il metodo restituisce la quantità con cui l'articolo specificato è presente nella lista in seguito all'aggiunta.
+}
+
+\method{elimina}{String}{boolean} {
+Elimina dalla lista l'elemento avente il nome specificato (se presente). Il metodo restituisce \cod{true} se è stato cancellato un elemento, \cod{false} altrimenti.
+}
+
+\method{getQuantita}{String}{float} {
+Restituisce la quantità dell'elemento presente nella lista ed avente il nome specificato. Se l'elemento non è presente restituisce zero.
+}
+
+\method{svuota}{\emptyset}{\emptyset} {
+Svuota la lista della spesa.
+}
+
+\method{toString}{\emptyset}{String} {
+Converte in una stringa il contenuto dell'intera lista nel formato \cod{Nome1: Quantità1, Nome2: Quantità2, \ldots}.
+
+\begin{footnotesize}
+Suggerimento: si utilizzi la classe standard \cod{StringBuilder} per la costruzione incrementale della stringa da restituire.
+\end{footnotesize}
+}
+
+\end{methodslist}
+
+Si realizzi una classe \cod{Main} dotata di un metodo \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+Nessuno dei metodi della classe può operare con i canali di input/output (per es. \cod{System.out}). L'interfacciamento con l'utente per la lettura e la visualizzazione dei dati sono concessi esclusivamente all'interno della classe \cod{Main}.

@@ -1,0 +1,19 @@
+% Remember to use the lgrind style
+
+\Head{}
+\File{somma.cpp}{2006}{9}{18}{14:17}{254}
+\L{\LB{\C{}//Metodo_privato\CE{}}}
+\L{\LB{}}
+\index{AlberoBinario::\_Somma}\Proc{AlberoBinario::\_Somma}\L{\LB{\K{void}_\V{AlberoBinario::\_Somma}(\K{const}_\V{PNodo}\&_\V{n},_\K{int}_\V{i})_\{}}
+\L{\LB{}\Tab{2}{\K{if}_(\V{n}_\&\&_(\V{i}_!=_\N{0}))_\{}}
+\L{\LB{}\Tab{4}{\V{n}\-\!\>\V{el}_+=_\V{i};}}
+\L{\LB{}\Tab{4}{\V{\_Somma}(\V{n}\-\!\>\V{sin},_\V{i});}}
+\L{\LB{}\Tab{4}{\V{\_Somma}(\V{n}\-\!\>\V{des},_\V{i});}}
+\L{\LB{}\Tab{2}{\}}\Tab{5}{}}
+\L{\LB{\}}}
+\L{\LB{}}
+\L{\LB{\C{}//Metodo_Pubblico\CE{}}}
+\L{\LB{}}
+\index{AlberoBinario::Somma}\Proc{AlberoBinario::Somma}\L{\LB{\K{void}_\V{AlberoBinario::Somma}(\K{int}_\V{i})_\{}}
+\L{\LB{}\Tab{2}{\V{\_Somma}(\V{root},_\V{i});}}
+\L{\LB{\}}}

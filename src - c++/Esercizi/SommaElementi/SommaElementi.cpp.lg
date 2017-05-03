@@ -1,0 +1,14 @@
+% Remember to use the lgrind style
+
+\Head{}
+\File{SommaElementi.cpp}{2006}{9}{18}{14:29}{157}
+\index{Lista::Somma}\Proc{Lista::Somma}\L{\LB{\V{TElem}_\V{Lista::Somma}()_\K{const}_\{}}
+\L{\LB{}\Tab{2}{\V{PRec}_\V{p}_=_\V{first};}}
+\L{\LB{}\Tab{2}{\V{TElem}_\V{somma}_=_\N{0};}}
+\L{\LB{}\Tab{2}{\K{while}_(\V{p})_\{}}
+\L{\LB{}\Tab{4}{\V{somma}_=_\V{somma}_+_\V{p}\-\!\>\V{el};}}
+\L{\LB{}\Tab{4}{\V{p}=\V{p}\-\!\>\V{succ};}}
+\L{\LB{}\Tab{2}{\}}}
+\L{\LB{}\Tab{2}{}}
+\L{\LB{}\Tab{2}{\K{return}_\V{somma};}}
+\L{\LB{\}}}

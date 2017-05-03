@@ -1,0 +1,18 @@
+\exercise{Occorrenza Massima}
+Modificare la classe \cod{AlberoBinario} (\cfr{Ex:Albero Binario}) per prevedere un'occorrenza massima degli elementi in esso inseriti. Più precisamente, il costruttore deve accettare come parametro di ingresso un numero intero positivo (per es. \cod{maxocc}); l'inserimento di un nuovo elemento nell'albero deve andare a buon fine solo se tale elemento è presente con occorrenza minore di \cod{maxocc}.
+
+Di seguito è riportata la specifica dei due metodi pubblici da implementare per la classe \cod{AlberoBinario}.
+
+\begin{methodslist}
+
+\method{AlberoBinario}{unsigned int}{\emptyset} {
+Costruttore con parametro di ingresso di tipo intero non negativo. Il parametro di ingresso rappresenta l'occorrenza massima con cui gli elementi potranno essere presenti nell'albero.
+}
+
+\method{Inserisci}{TElem}{bool}{
+Inserisce l'elemento specificato nell'albero solo se esso è presente con occorrenza minore dell'occorrenza massima specificata nel costruttore.
+
+Il metodo restituisce \cod{true} o \cod{false} a seconda che l'inserimento sia avvenuto o meno.
+}
+
+\end{methodslist}

@@ -1,0 +1,20 @@
+% Remember to use the lgrind style
+
+\Head{}
+\File{ProfonditaMaggioreDi.cpp}{2006}{9}{11}{23:42}{610}
+\L{\LB{\C{}//Metodo_privato\CE{}}}
+\index{AlberoBinario::\_ProfMaggioreDi}\Proc{AlberoBinario::\_ProfMaggioreDi}\L{\LB{\K{bool}_\V{AlberoBinario::\_ProfMaggioreDi}(\K{const}_\V{PNodo}\&_\V{n},_\K{unsigned}_\K{int}_\V{p})_\K{const}_\{}}
+\L{\LB{}\Tab{2}{\K{if}_(\V{n})_\{_\C{}//se_l{'}albero_è_non_vuoto.\,.\,.\CE{}}}
+\L{\LB{}\Tab{4}{\K{if}_(\V{p}_==_\N{0})_\C{}//se_il_contatore_è_(sceso_fino_a)_zero.\,.\,.\CE{}}}
+\L{\LB{}\Tab{6}{\K{return}_\K{true};_\C{}//.\,.\,.abbiamo_superato_la_prof._richiesta.\,.\,.\CE{}}}
+\L{\LB{}\Tab{4}{\K{else}_\C{}//.\,.\,.altrimenti_bisogna_continuare_la_discesa_nei_sottoalberi_decrementando_p.\CE{}}}
+\L{\LB{}\Tab{6}{\K{return}_(\V{\_ProfMaggioreDi}(\V{n}\-\!\>\V{sin},_\V{p}\-\N{1})_\|\,\|_\V{\_ProfMaggioreDi}(\V{n}\-\!\>\V{des},_\V{p}\-\N{1}));}}
+\L{\LB{}\Tab{2}{\}}}
+\L{\LB{}\Tab{2}{\K{else}_\C{}//.\,.\,.altrimenti_è_falso.\CE{}}}
+\L{\LB{}\Tab{4}{\K{return}_\K{false};}}
+\L{\LB{\}}\Tab{3}{}}
+\L{\LB{}}
+\L{\LB{\C{}//_Metodo_pubblico\CE{}}}
+\index{AlberoBinario::ProfMaggioreDi}\Proc{AlberoBinario::ProfMaggioreDi}\L{\LB{\K{bool}_\V{AlberoBinario::ProfMaggioreDi}(\K{unsigned}_\K{int}_\V{p})_\K{const}_\{}}
+\L{\LB{}\Tab{2}{\K{return}_\V{\_ProfMaggioreDi}(\V{root},_\V{p});}}
+\L{\LB{\}}}

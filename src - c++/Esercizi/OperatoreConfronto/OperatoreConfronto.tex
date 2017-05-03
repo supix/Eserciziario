@@ -1,0 +1,15 @@
+\exercise{Operatore di Confronto}
+Dotare la classe \cod{AlberoBinario} (\cfr{Ex:Albero Binario}) dell'operatore membro di confronto. Tale operatore viene invocato in seguito alla valutazione della seguente espressione:
+\begin{codequote}
+  a1 == a2;
+\end{codequote}  
+(ad esempio in un costrutto \cod{if}) dove \cod{a1} ed \cod{a2} sono due istanze della classe \cod{AlberoBinario}. In questo caso viene invocato l'operatore \cod{operator==()} sull'oggetto \cod{a1}, mentre \cod{a2}, parametro attuale, viene passato per riferimento prendendo il posto del parametro formale dell'operatore.
+
+Di seguito si riporta la specifica dell'operatore di confronto da realizzare.
+  
+\begin{methodslist}
+
+\method{operator==}{AlberoBinario}{bool} {
+È l'operatore di confronto tra alberi. Permette di valutare l'esatta uguaglianza di due alberi. Fornisce \cod{true} se esso stesso risulta essere perfettamente uguale all'albero in ingresso (anche strutturalmente), \cod{false} altrimenti.
+}
+\end{methodslist}

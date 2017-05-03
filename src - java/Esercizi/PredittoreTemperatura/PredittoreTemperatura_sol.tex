@@ -1,0 +1,19 @@
+\thesolution{Predittore di Temperatura}
+Il metodo \cod{estimateTemp()} deve effettuare un'estrapolazione lineare della temperatura basandosi sui dati delle ultime due letture comunicate. La formula da utilizzare è la seguente:
+
+%                  T2-T1
+%            ET = ------- (t-t1) + T1;
+%                  t2-t1
+
+$$\hat{T} = \frac{T_2-T_1}{t_2-t_1}(t-t_1)+T_1;$$
+                  
+dove $\hat{T}$ è la stima della temperatura all'istante $t$; $T_1$, $T_2$, $t_1$ e $t_2$ sono le ultime due letture della temperatura ed i relativi due istanti di lettura, rispettivamente.
+
+\bigskip
+\begin{footnotesize}
+N.B.: Variando l'implementazione del metodo \cod{estimateTemp()} si possono operare stime più accurate della temperatura; si potrebbe per esempio pensare di operare estrapolazioni di ordine superiore al primo. Per giunta ciò, non alterando l'interfaccia della classe, non comprometterebbe in alcun modo l'integrazione con i moduli utenti del predittore già realizzati.
+\end{footnotesize}
+
+\bigskip
+\inputmodule{TempPredictor.java}{Esercizi/PredittoreTemperatura/TempPredictor.java}
+\inputmodule{Main.java}{Esercizi/PredittoreTemperatura/Main.java}

@@ -1,0 +1,55 @@
+\exercise{Contenitore}
+Si realizzi in linguaggio C++ il tipo di dato astratto \cod{Contenitore} mediante uso del costrutto \cod{class} del linguaggio. Un Contenitore può contenere istanze del tipo Oggetto, definito come segue:
+
+\begin{codequote}
+  const int NMAX = 50;
+  typedef char Nome[NMAX];
+  typedef int Peso;
+
+  struct Oggetto {
+    Nome n;
+    Peso p;
+  };
+\end{codequote}
+
+Inoltre, ogni contenitore può ospitare oggetti fino al raggiungimento di un peso complessivo massimo, oltre il quale nessun altro oggetto può essere ospitato.
+
+Di seguito è riportata la specifica dei metodi pubblici da implementare per la classe \cod{Contenitore}.
+
+\begin{methodslist}
+
+\method{Contenitore}{Peso}{\emptyset}{
+Costruttore con parametro di tipo \cod{Peso}. Il parametro indica il peso massimo raggiungibile dalla totalità degli oggetti presenti nel contenitore.
+}
+
+\method{\~{}Contenitore}{\emptyset}{\emptyset}{
+Distruttore.
+}
+
+\method{Inserisci}{Nome,Peso}{bool}{
+Inserisce nel contenitore un oggetto avente il nome e il peso specificato. Il metodo restituisce \cod{true} se l'inserimento va a buon fine, cioè se il peso dell'elemento da inserire non eccede la capacità residua del contenitore, \cod{false} altrimenti.
+}
+
+\method{Svuota}{\emptyset}{\emptyset}{
+Svuota il contenitori di tutti gli oggetti presenti in esso.
+}
+
+\method{PesoComplessivo}{\emptyset}{Peso}{
+Restituisce il peso complessivo raggiunto dal contenitore.
+}
+
+\method{PesoResiduo}{\emptyset}{Peso}{
+Restituisce il peso residuo per il raggiungimento della capacità massima del contenitore.
+}
+
+\method{NumElem}{\emptyset}{unsigned int}{
+Restituisce il numero di oggetti presenti nel contenitore.
+}
+
+\method{Stampa}{\emptyset}{\emptyset}{
+Stampa le coppie (Nome, Peso) di tutti gli oggetti presenti nel contenitore.
+}
+
+\end{methodslist}
+
+L'unico metodo (pubblico, privato o protetto) della classe \cod{Contenitore} che può utilizzare lo standard-output (\cod{cout}) è il metodo \cod{Stampa()}. Gli altri metodi dovranno restituire l'esito delle operazioni eseguite mediante gli opportuni parametri di passaggio riportati nelle specifiche.

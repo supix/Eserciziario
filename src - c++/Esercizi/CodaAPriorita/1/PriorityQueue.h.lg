@@ -1,0 +1,25 @@
+% Remember to use the lgrind style
+
+\Head{}
+\File{PriorityQueue.h}{2006}{9}{5}{23:59}{456}
+\L{\LB{\K{typedef}_\K{int}_\V{TElem};}}
+\L{\LB{}}
+\L{\LB{\K{struct}_\V{Record};}}
+\L{\LB{\K{typedef}_\V{Record}*_\V{PRec};}}
+\L{\LB{}}
+\L{\LB{\K{class}_\V{PriorityQueue}_\{}}
+\L{\LB{\K{private:}}}
+\L{\LB{}\Tab{2}{\V{PRec}_\V{head};}}
+\L{\LB{}\Tab{2}{\V{PRec}_\V{tail};_\C{}//puntatore_alla_coda\CE{}}}
+\L{\LB{}\Tab{2}{\V{PRec}_\V{tail\_h};_\C{}//puntatore_alla_coda_della_sottosequenza_ad_alta_priorit$\alpha$\CE{}}}
+\L{\LB{}\Tab{2}{\K{void}_\V{Push}(\K{const}_\V{TElem}\&_\V{e});_\C{}//classico_Push_in_coda\CE{}}}
+\L{\LB{\K{public:}}}
+\L{\LB{}\Tab{2}{\V{PriorityQueue}();}}
+\L{\LB{}\Tab{2}{\V{\~{}PriorityQueue}();}}
+\L{\LB{}\Tab{2}{}}
+\L{\LB{}\Tab{2}{\K{void}_\V{PushLow}(\K{const}_\V{TElem}\&_\V{e});}}
+\L{\LB{}\Tab{2}{\K{void}_\V{PushHigh}(\K{const}_\V{TElem}\&_\V{e});}}
+\L{\LB{}\Tab{2}{\V{TElem}_\V{Pop}();}}
+\L{\LB{}\Tab{2}{\K{void}_\V{Clear}();}}
+\index{Empty}\Proc{Empty}\L{\LB{}\Tab{2}{\K{bool}_\V{Empty}()_\K{const};}}
+\L{\LB{\};}}

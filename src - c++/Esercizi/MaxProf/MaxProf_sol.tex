@@ -1,0 +1,18 @@
+\thesolution{Profondità Limitata}
+L'interfaccia della classe \cod{AlberoBinario} da realizzare è mostrata di seguito, con enfasi sulle modifiche da applicare alla versione della classe presentata in §\ref{Ex:Albero Binario}.
+
+\begin{codequote}
+  class AlberoBinario {
+  private:
+    ...
+    const unsigned int maxDepth;
+    ...
+  public:
+    AlberoBinario(unsigned int _maxDepth);
+    ...
+    bool Inserisci(const TElem& el);
+    ...
+  };
+\end{codequote}
+
+\inputprogram{Esercizi/MaxProf/MaxProf.cpp}

@@ -1,0 +1,49 @@
+\exercise{Agenzia Matrimoniale}
+Si realizzi in linguaggio Java il tipo di dato astratto \cod{AgenziaMatrimoniale} mediante uso del costrutto \cod{class} del linguaggio. L'implementazione deve essere realizzata mediante puntatori ed allocazione dinamica della memoria. Gli elementi della lista siano di tipo \cod{Persona} modellata con il nome (di classe \cod{String}), il sesso (di tipo \cod{boolean}) e il coniuge (di classe \cod{Persona}).
+
+Di seguito è riportata la specifica dei metodi pubblici da implementare per la classe \cod{AgenziaMatrimoniale}.
+
+\begin{methodslist}
+
+\method{AgenziaMatrimoniale}{\emptyset}{\emptyset} {
+Costruttore.
+}
+
+\method{aggiungiPersona}{String, boolean}{boolean} {
+Aggiunge alla struttura la persona avente nome specificato attraverso i parametri di ingresso, e indica se è maschio (parametro di ingresso booleano pari a \cod{true}) o femmina (parametro di ingresso booleano pari a \cod{false}). Restituisce \cod{true} in caso di inserimento avvenuto, \cod{false} altrimenti (se esiste già una persona con lo stesso nome).
+}
+
+\method{sposa}{String, String}{boolean} {
+Marca come sposate le due persone presenti nella struttura ed aventi nomi specificati dai parametri di ingresso. Restituisce l'esito dell'operazione. L'operazione fallisce nei casi seguenti:
+\begin{itemize}
+\item uno o entrambi i nomi non sono presenti nella lista;
+\item le persone specificate sono dello stesso sesso;
+\item una o entrambe le persone risultano già sposate.
+\end{itemize}
+}
+
+\method{coniugato}{String}{boolean, boolean} {
+Restituisce due valori booleani. Il primo indica se il nome specificato è presente o meno nella lista. Se tale valore è vero, il secondo valore restituito è pari a vero se la persona dal nome specificato è coniugata, falso altrimenti.
+}
+
+\method{numeroSposi}{\emptyset}{int} {
+Restituisce il numero delle persone coniugate nella struttura.
+}
+
+\method{numeroCoppie}{\emptyset}{int} {
+Restituisce il numero di coppie di sposi presenti nella struttura.
+}
+
+\method{svuota}{\emptyset}{\emptyset} {
+Svuota la struttura.
+}
+
+\method{toString}{\emptyset}{String} {
+Restituisce la rappresentazione testuale della struttura.
+}
+
+\end{methodslist}
+
+Si realizzi una classe \cod{Main} dotata di un metodo \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+Nessuno dei metodi della classe può operare con i canali di input/output (per es. \cod{System.out}). L'interfacciamento con l'utente per la lettura e la visualizzazione dei dati sono concessi esclusivamente all'interno della classe \cod{Main}.

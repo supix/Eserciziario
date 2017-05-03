@@ -1,0 +1,16 @@
+\exercise{Profondità Limitata}
+Modificare la classe \cod{AlberoBinario} (\cfr{Ex:Albero Binario}) perché non superi una profondità massima  durante il suo utilizzo.  La profondità massima raggiungibile è indicata al costruttore dell'albero come parametro di ingresso.
+
+Di seguito è riportata la specifica dei due nuovi metodi pubblici da implementare per la classe \cod{AlberoBinario}.
+
+\begin{methodslist}
+
+\method{AlberoBinario}{int}{\emptyset} {
+Costruttore con parametro intero non negativo. Il parametro di ingresso indica la massima profondità che l'albero può assumere durante il suo ciclo di vita.
+}
+
+\method{inserisci}{int}{boolean}{
+Inserisce in maniera ordinata l'elemento specificato nell'albero solo se l'inserimento non comporta il superamento della massima profondità prevista per l'albero. Il metodo restituisce \cod{true} se l'elemento è stato inserito nell'albero, \cod{false} altrimenti.
+}
+
+\end{methodslist}

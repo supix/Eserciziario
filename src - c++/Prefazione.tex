@@ -1,0 +1,100 @@
+\chapter*{Prefazione}
+\addcontentsline{toc}{chapter}{\numberline{}Prefazione}%
+Gli esercizi presentati in questo eserciziario sono stati proposti a studenti di Ingegneria delle Telecomunicazioni nell'ambito di un corso di \emph{Programmazione~I}.
+
+Il corso aveva lo scopo di introdurre alla programmazione orientata agli oggetti utilizzando il linguaggio C++. Una rilevante parte del programma affrontava lo studio dei tipi di dati astratti, con particolare enfasi alle strutture dati di tipo contenitore, stressandone i concetti di incapsulamento ed interfaccia. Gli esercizi dedicati all'approfondimento di questi concetti sono stati raccolti in questo eserciziario, insieme con le relative soluzioni.
+
+\section*{A chi è rivolto questo testo}
+Gli studenti che approcciano allo studio del linguaggio C++, in occasione di corsi di studi superiori, troveranno utile studiare e risolvere gli esercizi contenuti in questo testo. Se da un lato questi favoriscono l'acquisizione delle ricorrenti tecniche legate alla realizzazione ed all'uso di contenitori, dall'altro rappresentano un pretesto per mettere in pratica approcci algoritmici alla risoluzione di problemi più generici.
+
+Non essendo questo un libro di teoria, lo studio di uno dei numerosi testi dedicati alle nozioni della programmazione, alle regole ed alla sintassi del linguaggio C++, risulta propedeutico. Il testo certamente più rappresentativo è scritto dall'inventore del linguaggio, Bjarne Stroustrup~\cite{Stroustrup}. Esistono comunque numerosi altri testi orientati all'apprendimento del linguaggio, tra cui~\cite{Eckel, Savy}.
+
+\section*{La struttura degli esercizi}
+Questo eserciziario contiene differenti tipologie di esercizi: alcuni richiedono la realizzazione di una struttura dati di tipo contenitore, mediante uso del costrutto \cod{class} del linguaggio, fornendo allo studente la specifica in forma di interfaccia dei classici metodi di cui tali strutture sono dotate (aggiunta di un elemento, conteggio degli elementi, svuotamento, visita, etc.). Altri esercizi, basandosi sulle suddette implementazioni, richiedono la realizzazione di funzionalità finalizzate ad effettuare particolari elaborazioni sugli elementi contenuti (per esempio inserimenti o eliminazioni condizionate, somme, spostamenti, conteggi, etc.). Infine, alcuni esercizi richiedono la realizzazione di strutture dedicate a risolvere specifici problemi, e quindi prive dei classici requisiti di generalità.
+
+Per ogni metodo da implementare, una traccia fornisce le seguenti informazioni:
+\begin{itemize}
+  \item il nome del metodo;
+  \item l'insieme dei parametri di ingresso;
+  \item l'insieme dei parametri di uscita;
+  \item la descrizione della funzionalità che il metodo deve realizzare.
+\end{itemize}
+
+Per esempio, la specifica di un ipotetico metodo di eliminazione di elementi da una lista, potrebbe apparire come segue.
+
+\bigskip
+  \sffamily
+  \begin{methodslist}
+  \method{Elimina}{TElem}{unsigned int}{
+  Elimina dalla struttura tutte le occorrenze dell'elemento specificato dal parametro di ingresso. Restituisce il numero delle eliminazioni effettuate.
+  }
+  \end{methodslist}
+  \rmfamily  
+\bigskip
+
+Nel caso in cui l'insieme dei parametri di ingresso e/o di uscita fosse vuoto, si utilizzerà il simbolo~``\emptyset''. Talvolta può accadere che nella descrizione del funzionamento del metodo non si prenda in considerazione la totalità dei casi che possono verificarsi (pre-condizioni), limitandosi a descrivere il comportamento del metodo nei casi d'uso più comuni. In questo caso, il programmatore può scegliere arbitrariamente un comportamento per tutti i casi non esplicitamente considerati.
+
+Quando l'esercizio richiede la definizione di una struttura di tipo contenitore, spesso gli algoritmi da realizzare sono sufficientemente indipendenti dal tipo degli elementi contenuti, e fanno riferimento solo ad alcune loro proprietà (relazione di ordinamento, uguaglianza e disuguaglianza tra elementi, etc.). Per questo motivo, nell'ambito di tali strutture, il tipo degli elementi è sistematicamente indicato con il generico identificatore \cod{TElem}, essendo la definizione del tipo \cod{TElem} centralizzata e localizzata in testa all'header file della classe contenitore. Questa procedura anticipa l'uso della \emph{programmazione generica}, che in C++ può essere praticata mediante il meccanismo dei templates. Grazie alla tecnica suddetta, sarà semplice la eventuale conversione delle classi così realizzate in classi template.
+
+Per quanto riguarda le strategie di gestione della memoria, la realizzazione delle strutture dati può basarsi su un approccio di tipo statico (uso di vettori allocati sullo stack) oppure dinamico (realizzazione di strutture concatenate con puntatori ed allocate nell'heap mediante costrutto \cod{new}). Questa scelta, in alcuni casi, è lasciata alla sensibilità dello studente.
+
+Alcune delle soluzioni presentate constano di un unico file avente estensione \cod{.cpp}. In altri casi è stato presentato un approccio più modulare, mediante separazione del codice su più files (aventi estensioni \cod{.h} e \cod{.cpp}), enfatizzando in misura ancora maggiore i diversi moduli di cui l'astrazione è di volta in volta costituita.
+
+Per ognuno degli esercizi, oltre alla traccia, si fornisce la soluzione consistente nell'implementazione dei metodi conformi all'interfaccia specificata dalla traccia. Nel caso in cui la traccia richieda di realizzare una struttura dati completa (e non solo i metodi basati su di essa), nella soluzione viene anche fornito un modulo di test (di solito rappresentato dalla funzione \cod{main()}) utile esclusivamente al collaudo delle funzionalità della classe.
+
+Al fine di preservare una maggiore generalità delle strutture dati realizzate, un esplicito requisito comune a tutti gli esercizi consiste nel vietare l'uso dei meccanismi di I/O nell'implementazione dei metodi della classe. La responsabilità di prelevare i dati da tastiera e mostrare i risultati sulla console viene pertanto delegata al modulo di test. Un'unica deroga a questa regola è relativa al metodo di visita delle strutture (di solito contrassegnato dal nome \cod{Stampa()}): il concetto di \emph{iteratore}, utile ad astrarre l'attraversamento di una struttura contenitore, non è di solito noto agli studenti di un corso di base. Il lettore interessato può fare riferimento alla Standard Template Library (STL)~\cite{STL}, peraltro di notevole utilità in reali contesti di sviluppo software. Per le operazioni di I/O si utilizzano le funzionalità messe a disposizione dalla libreria standard \cod{iostream}, ed in particolare dai suoi oggetti \cod{cin} e \cod{cout}.
+
+Spesso nelle tracce non è richiesta l'implementazione di un costruttore di copia oppure di un operatore di assegnazione. Questi due metodi rientrano tra quelli che, se non definiti in una classe, vengono automaticamente sintetizzati dal compilatore e, se invocati dall'utente, producono una copia superficiale dell'oggetto (\emph{shallow-copy}). Se questo comportamento è scorretto --- o comunque indesiderato --- è possibile rendere del tutto indisponibili le funzionalità di copia o assegnazione tra oggetti della classe. Ciò si ottiene dichiarando nella sezione \cod{private} della classe i due metodi in questione e non fornendone alcuna implementazione~\cite{EffC++}. Così facendo, qualsiasi costrutto che finisca per invocare uno di questi due metodi produrrà un errore di compilazione. Tale tecnica viene spesso utilizzata nelle soluzioni degli esercizi presentati.
+
+\section*{Compilare i sorgenti}
+%\addcontentsline{toc}{section}{\numberline{}Compilare i sorgenti}%
+Tutti i sorgenti presentati sono stati compilati con la versione 3.3.1 della suite di compilazione GNU/GCC~\cite{GCC}, utilizzando le seguenti opzioni di compilazione:
+\begin{quote}
+    \cod{-Wall --ansi --pedantic}
+\end{quote}
+
+L'opzione \cod{-Wall} richiede al compilatore di non inibire la maggior parte dei messaggi di \textit{warning} che, pur non compromettendo la corretta compilazione del programma, sono sintomi di imprecisioni all'interno del codice. Le altre due opzioni inducono il compilatore ad accettare esclusivamente codice strettamente aderente allo standard ISO-C++~\cite{ISO-C++}, rifiutando la compilazione di eventuali estensioni non standard del linguaggio.
+
+Il codice sorgente delle soluzioni è stato scritto utilizzando l'ambiente di sviluppo Dev-C++~\cite{Dev-C++}, nella sua versione 4.9.9.0, utilizzabile su sistemi operativi della famiglia Microsoft$^{TM}$ Windows. Tale software consiste di un editor grafico che funge da interfaccia per le operazioni di stesura, compilazione e debugging del codice sorgente, oltre a fornire ed installare anche la suite di compilazione GNU/GCC. In ogni caso, purché si disponga di un compilatore conforme allo standard ISO-C++, qualsiasi altro ambiente di sviluppo, o anche un semplice editor di testi, possono essere considerati validi ai fini della stesura del codice sorgente.
+
+\section*{Uno sguardo al futuro}
+Quelli che alla fine di questo eserciziario penseranno: \emph{``Sì, e allora?''}, probabilmente sono pronti per affrontare uno studio più approfondito della programmazione, che non si esaurisce con il possesso delle nozioni su un linguaggio. Tra un individuo che conosca un linguaggio di programmazione ed un programmatore esperto c'è un differenza analoga a quella che esiste tra un individuo che sappia scrivere ed uno scrittore. Un buon programmatore non è quello che sa \emph{affrontare} la complessità, ma quello che sa \emph{dominarla}. Certamente la conoscenza della sintassi del linguaggio è un primo passo indispensabile, ma chi vuole approfondire questa materia non può fare a meno di acquisire le nozioni della progettazione, le buone prassi per la stesura del codice e gli strumenti forniti dalle librerie standard oggi disponibili. \`{E} solo attraverso questa strada che diviene possibile scrivere applicazioni non banali, preservandone le caratteristiche di comprensibilità, estensibilità, manutenibilità, correttezza e, in una sola parola, di \emph{qualità}. Programmare utilizzando l'incapsulamento, il polimorfismo, i meccanismi delle eccezioni, delle asserzioni, dei templates, le numerose librerie più o meno standard, significa disporre di strumenti semanticamente molto potenti, oltre che ben consolidati; significa delegare al compilatore lo svolgimento di una serie di operazioni e di controlli che, in alternativa, peserebbero sulle spalle del programmatore, oppure non verrebbero messi in essere affatto.
+
+\bigskip
+\footnotesize
+Si pensi ad esempio al seguente semplice problema: si vuole realizzare un programma C++ che, data una stringa di testo comunque lunga, calcoli l'occorrenza delle parole contenute in essa. Utilizzando esclusivamente i costrutti messi a disposizione dal linguaggio sarebbe necessario procedere secondo i seguenti passi:
+\begin{enumerate}
+\item progettazione di una struttura dati capace di contenere sequenze di caratteri comunque lunghe;
+\item progettazione di una struttura ad accesso tabellare capace di contenere coppie del tipo $(stringa, intero)$;
+\item progettazione di un algoritmo che analizzi la stringa, la scomponga nelle singole parole componenti e popoli coerentemente la struttura tabellare.
+\end{enumerate}
+
+Utilizzando invece quanto messo a disposizione dalla libreria STL~\cite{STL}, il programma suddetto apparirebbe come segue:
+
+\begin{lstlisting}
+    int main() {
+      string buf;
+      map<string,int> m;
+      while (cin >> buf)
+        m[buf]++;
+    }
+\end{lstlisting}
+
+Una volta che la STL sia stata acquisita, i vantaggi di un tale approccio risultano evidenti relativamente agli aspetti di (i) tempo di stesura; (ii) correttezza del codice; (iii) individuazione degli errori; (iv) comprensibilità; (v) manutenibilità; (vi) estensibilità; (vii) aderenza agli standard.
+\bigskip
+\normalsize
+
+Nell'apprendere le nozioni della progettazione e le buone prassi per la stesura del codice, ascoltare cosa hanno da dirci `i giganti' al proposito, può servire molto. A questo scopo non si può fare a meno di citare dei testi disponibili in letteratura, universalmente considerati dei classici.
+
+\emph{Design Patterns}~\cite{GoF} è probabilmente il più bel testo mai scritto nell'ambito della progettazione software, considerando anche le profonde ripercussioni che esso ha poi avuto sul concetto di buona progettazione software orientata agli oggetti, tanto da essere ancora oggi il libro di gran lunga più citato nel suo genere. In questo testo gli autori introducono il concetto di \emph{pattern progettuale software} (\emph{design pattern}); ad un livello di astrazione superiore a quello di qualsiasi linguaggio di programmazione, presentano poi 55 soluzioni a problemi comuni nell'ambito della progettazione, con esempi in linguaggio C++. Imperdibile.
+
+In programmazione un problema può essere spesso risolto seguendo un notevole numero di differenti strade, ognuna delle quali assoggetta il programmatore ad accettare determinati compromessi. I due libri \emph{Effective C++}~\cite{EffC++} e \emph{More Effective C++}~\cite{MoreEffC++} contengono una collezione di linee guida utili a comprendere cosa fare --- e cosa non fare --- con il linguaggio C++. Una nutrita schiera di programmatori ha assimilato da questi due testi un corretto stile di programmazione, ed ha imparato ad evitare i ricorrenti trabocchetti in agguato durante le fasi di stesura di codice in linguaggio C++. Il successo di questi testi è tale che oggi il compilatore GNU/GCC è dotato di un'opzione di compilazione che produce dei warnings in caso di violazione delle linee guida contenute in \emph{Effective C++}\footnote{L'opzione è: \cod{-Weffc++}.}.
+
+Chi voglia realmente approfondire la propria conoscenza del C++, non può fare a meno di assimilare le tecniche di programmazione basate sul meccanismo dei \emph{template} e della programmazione generica (\emph{generic programming)}. \emph{Modern C++ Design}~\cite{Alexandrescu} è particolarmente illuminante sotto questo punto di vista. Il libro apre le porte ad un utilizzo estremamente elegante dei template, inimmaginato perfino da chi li aveva originariamente progettati. Seguendo la sua impostazione nella stesura del software e le sue linee guida si perviene al progetto di architetture software limpide e snelle, ma contemporaneamente estremamente potenti e versatili.
+
+\section*{Dove trovare questo eserciziario}
+Questo eserciziario è distribuito sotto licenza GNU Free Documentation License (vedi \appendixname~\ref{label:fdl}) all'indirizzo \url{http://esercizicpp.sourceforge.net}. Dal sito è possibile prelevare l'ultima versione disponibile, accedere ai forum dedicati ai lettori ed iscriversi alla mailing-list informativa.
+
+\section*{Contattare l'autore}
+%\addcontentsline{toc}{section}{\numberline{}Contattare l'autore}%
+Commenti, suggerimenti e segnalazioni sono graditi. L'autore può essere contattato al seguente indirizzo e-mail: \url{mesposit@unina.it}

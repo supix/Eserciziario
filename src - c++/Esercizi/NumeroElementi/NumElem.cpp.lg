@@ -1,0 +1,21 @@
+% Remember to use the lgrind style
+
+\Head{}
+\File{NumElem.cpp}{2006}{9}{9}{0:29}{332}
+\index{AlberoBinario::\_NumElem}\Proc{AlberoBinario::\_NumElem}\L{\LB{\K{unsigned}_\K{int}_\V{AlberoBinario::\_NumElem}(\K{const}_\V{PNodo}\&_\V{n})_\K{const}_\{}}
+\L{\LB{}\Tab{2}{\K{if}_(\V{n})_\{}}
+\L{\LB{}\Tab{4}{\K{unsigned}_\K{int}_\V{num}_=_\N{1};}}
+\L{\LB{}\Tab{4}{}}
+\L{\LB{}\Tab{4}{\V{num}_=_\V{num}_+_\V{\_NumElem}(\V{n}\-\!\>\V{sin});}}
+\L{\LB{}\Tab{4}{\V{num}_=_\V{num}_+_\V{\_NumElem}(\V{n}\-\!\>\V{des});}}
+\L{\LB{}\Tab{4}{}}
+\L{\LB{}\Tab{4}{\K{return}_\V{num};}\Tab{19}{}}
+\L{\LB{}\Tab{2}{\}_\K{else}}}
+\L{\LB{}\Tab{4}{\K{return}_\N{0};}}
+\L{\LB{\}}}
+\L{\LB{}}
+\L{\LB{\C{}//_Metodo_pubblico\CE{}}}
+\L{\LB{}}
+\index{AlberoBinario::NumElem}\Proc{AlberoBinario::NumElem}\L{\LB{\K{unsigned}_\K{int}_\V{AlberoBinario::NumElem}()_\K{const}_\{}}
+\L{\LB{}\Tab{2}{\K{return}_\V{\_NumElem}(\V{root});}}
+\L{\LB{\}}}

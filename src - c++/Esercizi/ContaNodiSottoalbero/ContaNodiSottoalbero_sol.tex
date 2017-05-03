@@ -1,0 +1,31 @@
+\thesolution{Conta Nodi Sottoalbero}
+Il problema posto può essere scomposto in due sottoproblemi:
+\begin{itemize}
+  \item individuare la radice del sottoalbero di cui contare i nodi;
+  \item contare i nodi del sottoalbero individuato.
+\end{itemize}
+Solo la prima delle due operazioni suddette dipende da quale dei due metodi viene invocato, a differenza della seconda che resta inalterata. Questa considerazione suggerisce di aggiungere alla classe \cod{AlberoBinario} i seguenti metodi:
+
+\begin{codequote}
+  class AlberoBinario {
+  private:
+    ...
+    
+    unsigned int _ContaNodi(const PNodo& n) const;
+    PNodo _CercaOccorrenzaMin(const PNodo& n,
+      const TElem& el) const;
+    PNodo _CercaOccorrenzaMax(const PNodo& n,
+      const TElem& el) const;
+   public:
+    ...
+
+    unsigned int ContaNodiSottoalb_Min(const TElem& el) const;
+    unsigned int ContaNodiSottoalb_Max(const TElem& el) const;
+  };
+\end{codequote}
+
+Il metodo \cod{\_ContaNodi()} restituisce il numero di nodi di un sottoalbero di cui sia fornita la radice. Il metodo \cod{\_CercaOccorrenzaMin()} restituisce il puntatore al nodo avente valore specificato e posizionato più in alto (livello minimo) all'interno di un albero di cui si fornisce la radice. Analogo comportamento ha il metodo \cod{\_CercaOccorrenzaMax()}. I due metodi pubblici svolgono le operazioni richieste basandosi sui metodi privati mostrati. \cod{\_CercaOccorrenzaMin()}, ad esempio, invoca il metodo ricorsivo \cod{\_Cerca\-Oc\-cor\-ren\-za\-Min()} perché individui la radice del sottoalbero; su tale radice invoca poi il metodo \cod{\_ContaNodi()}.
+
+Di seguito si riportano le implementazioni dei cinque metodi dichiarati.
+
+\inputprogram{Esercizi/ContaNodiSottoalbero/ContaNodiSottoalbero.cpp}

@@ -1,0 +1,27 @@
+% Remember to use the lgrind style
+
+\Head{}
+\File{Ribalta\_iterativo.cpp}{2006}{9}{14}{23:45}{808}
+\L{\LB{\C{}//Versione_iterativa_del_metodo_Ribalta()\CE{}}}
+\L{\LB{}}
+\L{\LB{\C{}//Metodo_Pubblico\CE{}}}
+\index{Lista::Ribalta}\Proc{Lista::Ribalta}\L{\LB{\K{void}_\V{Lista::Ribalta}()_\{}}
+\L{\LB{}\Tab{2}{\K{if}_(\V{first}_\&\&_\V{first}\-\!\>\V{succ})_\{_\C{}//se_la_lista_contiene_almeno_2_elementi\CE{}}}
+\L{\LB{}\Tab{4}{\V{PRec}_\V{p1}_=_\V{first};_\C{}//memorizzo_in_p1_il_primo\CE{}}}
+\L{\LB{}\Tab{4}{\V{PRec}_\V{p2}_=_\V{p1}\-\!\>\V{succ};_\C{}//memorizzo_in_p2_il_secondo\CE{}}}
+\L{\LB{}\Tab{4}{\V{p1}\-\!\>\V{succ}_=_\N{0};_\C{}//p1,_diventando_l{'}ultimo_elemento,_deve_puntare_a_zero\CE{}}}
+\L{\LB{}\Tab{4}{}}
+\L{\LB{}\Tab{4}{\K{while}_(\V{p2}\-\!\>\V{succ})_\{_\C{}//se_p2_non_è_l{'}ultimo_elemento\CE{}}}
+\L{\LB{}\Tab{6}{\V{PRec}_\V{temp}_=_\V{p2}\-\!\>\V{succ};_\C{}//memorizzo_in_temp_il_successivo_di_p2\CE{}}}
+\L{\LB{}\Tab{6}{\V{p2}\-\!\>\V{succ}_=_\V{p1};_\C{}//il_successivo_di_p2_è_ora_p1\CE{}}}
+\L{\LB{}\Tab{6}{}}
+\L{\LB{}\Tab{6}{\V{p1}_=_\V{p2};_\C{}//p1_diventa_p2;\CE{}}}
+\L{\LB{}\Tab{6}{\V{p2}_=_\V{temp};_\C{}//p2_diventa_temp\CE{}}}
+\L{\LB{}\Tab{4}{\}}}
+\L{\LB{}}
+\L{\LB{}\Tab{4}{\C{}//in_questo_punto_del_codice_p1_e_p2_puntano_agli_ultimi\CE{}}}
+\L{\LB{}\Tab{4}{\C{}//due_elementi_della_lista.\CE{}}}
+\L{\LB{}\Tab{4}{\V{p2}\-\!\>\V{succ}_=_\V{p1};_\C{}//il_successivo_di_p2_è_ora_p1\CE{}}}
+\L{\LB{}\Tab{4}{\V{first}_=_\V{p2};_\C{}//p2_ora_è_la_nuova_testa\CE{}}}
+\L{\LB{}\Tab{2}{\}}\Tab{5}{}}
+\L{\LB{\}}}

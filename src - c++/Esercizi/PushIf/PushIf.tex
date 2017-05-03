@@ -1,0 +1,22 @@
+\exercise{Push If}
+Si modifichi la classe \cod{Pila} dell'esercizio §\ref{Ex:Push Greater} per renderla conforme ai metodi specificati di seguito:
+
+\begin{methodslist}
+
+\method{Pila}{unsigned int}{\emptyset} {
+Costruttore con parametro. Il parametro di ingresso indica il numero di inserimenti massimi consecutivi possibili (vedi anche specifiche del metodo \cod{Push()}).
+}
+
+\method{Push}{TElem}{bool} {
+Aggiunge sulla pila l'elemento specificato se non è stato superato il numero massimo di inserimenti consecutivi (cioè non intervallati da alcun prelievo con il metodo \cod{Pop()} o da uno svuotamento completo della lista con il metodo \cod{Svuota()}). Nel caso in cui tale numero, specificato dal parametro di ingresso del costruttore, sia stato superato, l'inserimento non avviene ed il metodo restituisce \cod{false}. Altrimenti restituisce \cod{true}.
+}
+
+\method{Pop}{\emptyset}{TElem} {
+Estrae e restituisce l'elemento di testa corrente della pila. Azzera il conteggio degli inserimenti. In caso di pila vuota il comportamento di questo metodo è non specificato.
+}
+
+\method{Svuota}{\emptyset}{\emptyset} {
+Svuota la pila ed azzera il conteggio degli inserimenti.
+}
+
+\end{methodslist}

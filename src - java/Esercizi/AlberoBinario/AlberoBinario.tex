@@ -1,0 +1,46 @@
+\exercise{Albero Binario}
+Realizzare la classe \cod{AlberoBinario}. Il tipo \cod{TElem} dei suoi elementi sia il tipo \cod{int} e gli elementi risultino ordinati secondo la relazione di ordinamento crescente per gli interi. L'implementazione di tutti i metodi sia basata su appositi metodi ricorsivi. L'interfaccia della classe sia la seguente.
+  
+\begin{methodslist}
+
+\method{AlberoBinario}{\emptyset}{\emptyset} {
+Costruttore della struttura.
+}
+
+\method{AlberoBinario}{AlberoBinario}{\emptyset} {
+Costruttore di copia.
+}
+
+\method{aggiungiElem}{int}{\emptyset} {
+Metodo di aggiunta di un elemento all'albero.
+}
+
+\method{inAlb}{int}{boolean} {
+Ricerca un elemento nell'albero. Restituisce \cod{true} nel caso in cui l'elemento specificato sia presente nell'albero, \cod{false} altrimenti.
+}
+
+\method{elimina}{int}{\emptyset} {
+Elimina l'elemento specificato dall'albero.
+}
+
+\method{svuota}{\emptyset}{\emptyset} {
+Svuota la struttura.
+}
+
+\method{preOrdine}{\emptyset}{String} {
+Effettua una visita in pre-ordine dell'albero, restituendo in una stringa tutti gli elementi.
+}
+
+\method{postOrdine}{\emptyset}{String} {
+Effettua una visita in post-ordine dell'albero, restituendo in una stringa tutti gli elementi.
+}
+
+\method{inOrdine}{\emptyset}{String} {
+Effettua una visita in ordine dell'albero, restituendo in una stringa tutti gli elementi.
+}
+
+Si realizzi una classe \cod{Main} dotata di un metodo \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+Nessuno dei metodi della classe può operare con i canali di input/output (per es. \cod{System.out}). L'interfacciamento con l'utente per la lettura e la visualizzazione dei dati sono concessi esclusivamente all'interno della classe \cod{Main}.
+
+\end{methodslist}

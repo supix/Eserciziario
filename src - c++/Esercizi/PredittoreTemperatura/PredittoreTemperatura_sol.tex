@@ -1,0 +1,18 @@
+\thesolution{Predittore di Temperatura}
+Il metodo \cod{EstimateTemp()} deve effettuare un'estrapolazione lineare della temperatura basandosi sui dati delle ultime due letture comunicate. La formula da utilizzare è la seguente:
+
+%                  T2-T1
+%            ET = ------- (t-t1) + T1;
+%                  t2-t1
+
+$$\hat{T} = \frac{T_2-T_1}{t_2-t_1}(t-t_1)+T_1;$$
+                  
+dove $\hat{T}$ è la stima della temperatura all'istante $t$; $T_1$, $T_2$, $t_1$ e $t_2$ sono le ultime due letture della temperatura ed i relativi due istanti di lettura, rispettivamente.
+
+\bigskip
+\begin{footnotesize}
+N.B.: Variando l'implementazione del metodo \cod{EstimateTemp()} (ed eventualmente la sezione \cod{private} della classe) diviene possibile operare stime più accurate della temperatura; si potrebbe per esempio pensare di operare estrapolazioni di ordine superiore al primo. Per giunta ciò, non alterando l'interfaccia della classe, non avrebbe alcuna ripercussione negativa sui moduli utenti del predittore.
+\end{footnotesize}
+
+\bigskip
+\inputprogram{Esercizi/PredittoreTemperatura/TempPredictor.cpp}

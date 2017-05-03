@@ -1,0 +1,333 @@
+\documentclass[a4paper,12pt,italian]{report}
+
+\usepackage[italian]{babel}             %Nomi italiani
+\usepackage[latin1]{inputenc}           %Lettere accentate
+\usepackage{graphicx,color}                   %Inclusione delle figure
+\usepackage{url}
+
+%\usepackage{shading}
+%\usepackage{moreverb}                   %Enhanced verbatim (per le linee di codice)
+%\usepackage[isu,footnotesize]{caption}  %Caption piccole e indentate
+%\usepackage{setspace}                   %Interlinea
+\usepackage[hang,footnotesize]{subfigure} %Inserimento di subfigures
+\usepackage[subfigure,titles]{tocloft}
+\usepackage{listings}
+\lstset{language=C++}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Nuovi ambienti floating  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{float}
+%\floatstyle{ruled}
+%\newfloat{program}{tbp}{lol}[chapter]
+%\floatname{program}{\programname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%  HighLight sorgenti: ambiente lgrind %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Headings & Footings %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr} \pagestyle{fancy}%
+\makeatletter
+\renewcommand{\chaptermark}[1]{\markboth{\footnotesize \thechapter.\ #1}{}}%
+%\renewcommand{\sectionmark}[1]{\markright{\MakeUppercase \footnotesize \thesection.\ #1}{}}%
+\makeatother
+
+\fancyhf{}                              %Elimino header e footer di default
+\fancyhead[R]{\thepage}      %Imposto l'header sinistro con il nome del capitolo
+\fancyhead[L]{\bfseries \leftmark}                 %Imposto l'header destro con il numero di pagina
+%\fancyhead[OR]{\bfseries \leftmark}      %Imposto l'header sinistro con il nome del capitolo
+%\fancyhead[OL]{\thepage}                 %Imposto l'header destro con il numero di pagina
+%\fancyhead[EL]{\bfseries \rightmark}      
+%\fancyhead[ER]{\thepage}             
+
+\headheight 16pt                        %Altezza dell'header per evitare overfull box
+% ridefinisco lo stile plain per le pagine di inizio capitolo
+\fancypagestyle{plain}{%
+  \fancyhf{}                            %Elimino header e footer di default
+  \fancyfoot[C]{\thepage}               %Imposto il numero di pagina al centro del footer
+  \renewcommand{\headrulewidth}{0pt}    %Nessuna linea sull'header
+  \renewcommand{\footrulewidth}{0pt}    %Nessuna linea sul footer
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage[nolineno,noindent]{lgrind} %[noindent,nolineno,procnames,noprocindex,fussy,norules,nolineno,leftno,lineno5]
+%\newcommand{\programinput}[1]{\begin{spacing}{1} \footnotesize \verbatiminput{#1} \end{spacing}}
+%\newcommand{\lgrindinput}[1]{
+%    \begin{lgrind}
+%      \footnotesize
+%      \input{#1}
+%    \end{lgrind}
+%}
+\newcommand{\cod}{\texttt}
+
+%\newcommand\ttpfamily{\fontfamily{ccr}\selectfont\footnotesize}
+%\usepackage{concrete}
+\usepackage[T1]{fontenc}
+\DeclareFontFamily{T1}{ttp}{}
+%\usepackage{beton}
+\usepackage{t1enc}
+
+% Definizioni font per il pacchetto lgrind
+%\def\CMfont{\sffamily\itshape}
+%\def\KWfont{\sffamily\bfseries}
+%\def\VRfont{\ttfamily}
+%\def\BGfont{\ttfamily}
+
+\newcommand{\method}[4]{
+  \begin{raggedright}
+    \begin{tabular}{p{.40\textwidth}p{.23\textwidth}p{.23\textwidth}}
+      \cod{#1()} & \cod{#2} & \cod{#3}\\
+      \multicolumn{3}{p{.9\textwidth}}{#4}\\
+    \end{tabular}
+    \bigskip
+  \end{raggedright}
+}
+
+\newcommand{\methodsheader}{
+  \bigskip
+  \begin{raggedright}
+    \begin{tabular}{p{.40\textwidth}p{.23\textwidth}p{.23\textwidth}}
+      Nome & Param.~Ingr. & Param.~Usc.\\
+      \hline
+    \end{tabular}
+  \end{raggedright}  
+  \nolinebreak
+  
+%Don't erase the above empty line
+}
+
+\newenvironment{methodslist}
+  {
+    %\sffamily
+    \methodsheader
+    \nopagebreak
+  }
+  {
+    %\rmfamily
+  }
+
+\renewcommand{\emptyset}{$\phi$}
+\def\sectionname{Esercizio}
+\newcommand{\cfr}[1]{\seename~§\ref{#1}}
+\def\version{V0.88}
+
+%\newcommand{\inputprogram}[2]{
+%  \subsubsection*{\textcolor[gray]{.4}{\sffamily File \cod{#1}}}
+%  \lgrindinput{#2}
+%}
+
+\lstnewenvironment{codequote}
+  {
+    \footnotesize
+  }
+  {
+  }
+
+\newcommand{\inputmodule}[2]{
+  {\bigskip
+   \center
+    \subsubsection*{\textcolor[gray]{.4}{\sffamily \framebox{File \cod{#1}}}}
+  }
+  \scriptsize
+  \lstinputlisting{#2}
+  \normalsize  
+  \lstset{numbers=none} %disable lines numbering
+}
+
+\newcommand{\enablelstnum}{
+  \lstset{numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt}
+}
+
+\newcommand{\inputprogram}[1]{
+  \scriptsize
+  \lstinputlisting{#1}
+  \normalsize  
+  \lstset{numbers=none} %disable lines numbering
+}
+
+\newcommand{\exercise}[1]{
+  \section{#1}
+  %\newline
+  {
+  \hfill
+  \footnotesize\sffamily
+  \textcolor[gray]{.4}{Soluzione a pag.~\pageref{Sol:#1}}
+  \label{Ex:#1}
+  \newline
+  }	
+}
+
+\newcommand{\solution}[0]{\subsection*{Soluzione}}
+\newcommand{\thesolution}[1]{
+  \section{#1}
+  %\newline
+  {
+  \hfill
+  \footnotesize\sffamily
+  \textcolor[gray]{.4}{Traccia a pag.~\pageref{Ex:#1}}
+  \label{Sol:#1}
+  \newline
+  }
+}
+
+%Fix small space for numbers in the TOC
+%\makeatletter\renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{3.3em}}\makeatother
+
+% define the title
+\input{titlepage}
+
+\begin{document}
+%Tune space between numbers and titles in toc (uses package tocloft)
+\addtolength{\cftchapnumwidth}{.5\cftchapnumwidth}
+\addtolength{\cftsecnumwidth}{.5\cftsecnumwidth}
+
+\maketitle
+\tableofcontents
+\clearpage
+%\listoffigures
+%\clearpage
+
+\markboth{Prefazione}{Prefazione}
+\input{Prefazione}
+
+\part{Esercizi}
+
+\renewcommand{\thechapter}{EL}
+\chapter{Esercizi su liste}
+\input{Esercizi/LinkedList/LinkedList}
+\input{Esercizi/SommaElementi/SommaElementi}
+\input{Esercizi/CodaPari/CodaPari}
+\input{Esercizi/MinMax/MinMax}
+\input{Esercizi/ListaStatica/ListaStatica}
+\input{Esercizi/EOrdinata/EOrdinata}
+\input{Esercizi/EliminaTutti/EliminaTutti}
+\input{Esercizi/EliminaUltimi/EliminaUltimi}
+\input{Esercizi/SommaCoda/SommaCoda}
+\input{Esercizi/SpostaTestaInCoda/SpostaTestaInCoda}
+\input{Esercizi/EliminaPariDispari/EliminaPariDispari}
+\input{Esercizi/ListaDoppiamenteCollegata/ListaDoppiamenteCollegata}
+\input{Esercizi/Ribalta/Ribalta}
+
+\renewcommand{\thechapter}{EA}
+\chapter{Esercizi su alberi binari}
+\input{Esercizi/AlberoBinario/AlberoBinario}
+\input{Esercizi/NumeroElementi/NumeroElementi}
+\input{Esercizi/Occorrenze/Occorrenze}
+\input{Esercizi/MaxOcc/MaxOcc}
+\input{Esercizi/MaxProf/MaxProf}
+\input{Esercizi/Somma/Somma}
+\input{Esercizi/Sostituisci/Sostituisci}
+\input{Esercizi/ContaMinMax/ContaMinMax}
+\input{Esercizi/ProfonditaMaggioreDiDue/ProfonditaMaggioreDiDue}
+\input{Esercizi/ProfonditaMaggioreDi/ProfonditaMaggioreDi}
+\input{Esercizi/ProfonditaMax/ProfonditaMax}
+\input{Esercizi/SommaLivello/SommaLivello}
+\input{Esercizi/EliminaFoglia/EliminaFoglia}
+\input{Esercizi/EliminaFoglie/EliminaFoglie}
+\input{Esercizi/CercaFoglia/CercaFoglia}
+\input{Esercizi/OperatoreConfronto/OperatoreConfronto}
+\input{Esercizi/ContaNodiNonFoglia/ContaNodiNonFoglia}
+\input{Esercizi/ContaNodi/ContaNodi}
+\input{Esercizi/ContaNodiSottoalbero/ContaNodiSottoalbero}
+\input{Esercizi/SommaMinMax/SommaMinMax}
+
+\renewcommand{\thechapter}{EP}
+\chapter{Esercizi su pile}
+\input{Esercizi/PushGreater/PushGreater}
+\input{Esercizi/PushIf/PushIf}
+
+\renewcommand{\thechapter}{EC}
+\chapter{Esercizi su code}
+\input{Esercizi/Coda/Coda}
+\input{Esercizi/CodaConPerdite/CodaConPerdite}
+\input{Esercizi/CodaAPriorita/CodaAPriorita}
+\input{Esercizi/PopMax/PopMax}
+
+\renewcommand{\thechapter}{EX}
+\chapter{Altri esercizi}
+\input{Esercizi/Accumulatore/Accumulatore}
+\input{Esercizi/Cifratore/Cifratore}
+\input{Esercizi/ListaDellaSpesa/ListaDellaSpesa}
+\input{Esercizi/PredittoreTemperatura/PredittoreTemperatura}
+\input{Esercizi/Contenitore/Contenitore}
+\input{Esercizi/ListaPrenotazioni/ListaPrenotazioni}
+\input{Esercizi/Classifica/Classifica}
+\input{Esercizi/AgenziaMatrimoniale/AgenziaMatrimoniale}
+\input{Esercizi/ParcoPattini/ParcoPattini}
+\input{Esercizi/Timer/Timer}
+\input{Esercizi/TimerAdvanced/TimerAdvanced}
+\input{Esercizi/Votazioni/Votazioni}
+
+\part{Soluzioni}
+
+\renewcommand{\thechapter}{SL}
+\chapter{Soluzioni degli esercizi su liste}
+\input{Esercizi/LinkedList/LinkedList_sol}
+\input{Esercizi/SommaElementi/SommaElementi_sol}
+\input{Esercizi/CodaPari/CodaPari_sol}
+\input{Esercizi/MinMax/MinMax_sol}
+\input{Esercizi/ListaStatica/ListaStatica_sol}
+\input{Esercizi/EOrdinata/EOrdinata_sol}
+\input{Esercizi/EliminaTutti/EliminaTutti_sol}
+\input{Esercizi/EliminaUltimi/EliminaUltimi_sol}
+\input{Esercizi/SommaCoda/SommaCoda_sol}
+\input{Esercizi/SpostaTestaInCoda/SpostaTestaInCoda_sol}
+\input{Esercizi/EliminaPariDispari/EliminaPariDispari_sol}
+\input{Esercizi/ListaDoppiamenteCollegata/ListaDoppiamenteCollegata_sol}
+\input{Esercizi/Ribalta/Ribalta_sol}
+
+\renewcommand{\thechapter}{SA}
+\chapter{Soluzioni degli esercizi su alberi binari}
+\input{Esercizi/AlberoBinario/AlberoBinario_sol}
+\input{Esercizi/NumeroElementi/NumeroElementi_sol}
+\input{Esercizi/Occorrenze/Occorrenze_sol}
+\input{Esercizi/MaxOcc/MaxOcc_sol}
+\input{Esercizi/MaxProf/MaxProf_sol}
+\input{Esercizi/Somma/Somma_sol}
+\input{Esercizi/Sostituisci/Sostituisci_sol}
+\input{Esercizi/ContaMinMax/ContaMinMax_sol}
+\input{Esercizi/ProfonditaMaggioreDiDue/ProfonditaMaggioreDiDue_sol}
+\input{Esercizi/ProfonditaMaggioreDi/ProfonditaMaggioreDi_sol}
+\input{Esercizi/ProfonditaMax/ProfonditaMax_sol}
+\input{Esercizi/SommaLivello/SommaLivello_sol}
+\input{Esercizi/EliminaFoglia/EliminaFoglia_sol}
+\input{Esercizi/EliminaFoglie/EliminaFoglie_sol}
+\input{Esercizi/CercaFoglia/CercaFoglia_sol}
+\input{Esercizi/OperatoreConfronto/OperatoreConfronto_sol}
+\input{Esercizi/ContaNodiNonFoglia/ContaNodiNonFoglia_sol}
+\input{Esercizi/ContaNodi/ContaNodi_sol}
+\input{Esercizi/ContaNodiSottoalbero/ContaNodiSottoalbero_sol}
+\input{Esercizi/SommaMinMax/SommaMinMax_sol}
+
+\renewcommand{\thechapter}{SP}
+\chapter{Soluzioni degli esercizi su pile}
+\input{Esercizi/PushGreater/PushGreater_sol}
+\input{Esercizi/PushIf/PushIf_sol}
+
+\renewcommand{\thechapter}{SC}
+\chapter{Soluzioni degli esercizi su code}
+\input{Esercizi/Coda/Coda_sol}
+\input{Esercizi/CodaConPerdite/CodaConPerdite_sol}
+\input{Esercizi/CodaAPriorita/CodaAPriorita_sol}
+\input{Esercizi/PopMax/PopMax_sol}
+
+\renewcommand{\thechapter}{SX}
+\chapter{Soluzioni degli altri esercizi}
+\input{Esercizi/Accumulatore/Accumulatore_sol}
+\input{Esercizi/Cifratore/Cifratore_sol}
+\input{Esercizi/ListaDellaSpesa/ListaDellaSpesa_sol}
+\input{Esercizi/PredittoreTemperatura/PredittoreTemperatura_sol}
+\input{Esercizi/Contenitore/Contenitore_sol}
+\input{Esercizi/ListaPrenotazioni/ListaPrenotazioni_sol}
+\input{Esercizi/Classifica/Classifica_sol}
+\input{Esercizi/AgenziaMatrimoniale/AgenziaMatrimoniale_sol}
+\input{Esercizi/ParcoPattini/ParcoPattini_sol}
+\input{Esercizi/Timer/Timer_sol}
+\input{Esercizi/TimerAdvanced/TimerAdvanced_sol}
+\input{Esercizi/Votazioni/Votazioni_sol}
+
+\appendix
+\input{FreeDocumentationLicense}
+
+\bibliographystyle{unsrt}
+\bibliography{bibliography}
+
+\end{document}

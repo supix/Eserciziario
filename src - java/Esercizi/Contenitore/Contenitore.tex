@@ -1,0 +1,42 @@
+\exercise{Contenitore}
+Si realizzi in linguaggio Java il tipo di dato astratto \cod{Contenitore} mediante uso del costrutto \cod{class} del linguaggio. Un Contenitore può contenere istanze del tipo Oggetto, modellato con un nome (di classe \cod{String}) ed un peso (di tipo \cod{float}).
+
+Inoltre, ogni contenitore può ospitare oggetti fino al raggiungimento di un peso complessivo massimo, oltre il quale nessun altro oggetto può essere ospitato.
+
+Di seguito è riportata la specifica dei metodi pubblici da implementare per la classe \cod{Contenitore}.
+
+\begin{methodslist}
+
+\method{Contenitore}{float}{\emptyset}{
+Costruttore con parametro di tipo \cod{float}. Il parametro indica il peso massimo raggiungibile dalla totalità degli oggetti presenti nel contenitore.
+}
+
+\method{inserisci}{String, float}{boolean}{
+Inserisce nel contenitore un oggetto avente il nome e il peso specificato. Il metodo restituisce \cod{true} se l'inserimento va a buon fine, cioè se il peso dell'elemento da inserire non eccede la capacità residua del contenitore, \cod{false} altrimenti.
+}
+
+\method{svuota}{\emptyset}{\emptyset}{
+Svuota il contenitori di tutti gli oggetti presenti in esso.
+}
+
+\method{pesoComplessivo}{\emptyset}{float}{
+Restituisce il peso complessivo raggiunto dal contenitore.
+}
+
+\method{pesoResiduo}{\emptyset}{float}{
+Restituisce il peso residuo per il raggiungimento della capacità massima del contenitore.
+}
+
+\method{numElem}{\emptyset}{int}{
+Restituisce il numero di oggetti presenti nel contenitore.
+}
+
+\method{toString}{\emptyset}{String}{
+Stampa le coppie (nome, peso) di tutti gli oggetti presenti nel contenitore.
+}
+
+\end{methodslist}
+
+Si realizzi una classe \cod{Main} dotata di un metodo \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+Nessuno dei metodi della classe può operare con i canali di input/output (per es. \cod{System.out}). L'interfacciamento con l'utente per la lettura e la visualizzazione dei dati sono concessi esclusivamente all'interno della classe \cod{Main}.

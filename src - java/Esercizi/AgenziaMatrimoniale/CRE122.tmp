@@ -1,0 +1,4 @@
+\thesolution{Agenzia Matrimoniale}
+\inputmodule{Persona.java}{Esercizi/AgenziaMatrimoniale/Persona.java}
+\inputmodule{AgenziaMatrimoniale.java}{Esercizi/AgenziaMatrimoniale/AgenziaMatrimoniale.java}
+\inputmodule{Main.java}{Esercizi/AgenziaMatrimoniale/Main.java}

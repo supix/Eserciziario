@@ -1,0 +1,48 @@
+\exercise{Coda}
+Si realizzi in linguaggio C++ il tipo di dato astratto \cod{Coda} mediante uso del costrutto \cod{class} del linguaggio e ricorrendo ad un'implementazione dinamica. Il tipo \cod{TElem} degli elementi della coda sia il tipo \cod{int}.
+
+Di seguito è riportata la specifica dei metodi pubblici da implementare per la classe \cod{Coda}.
+
+\begin{methodslist}
+
+\method{Coda}{\emptyset}{\emptyset} {
+Costruttore senza parametri.
+}
+
+\method{\~{}Coda}{\emptyset}{\emptyset} {
+Distruttore.
+}
+
+\method{Push}{TElem}{\emptyset} {
+Accoda l'elemento specificato.
+}
+
+\method{Top}{\emptyset}{TElem} {
+Restituisce l'elemento di testa corrente della coda (ma non lo estrae). In caso di coda vuota il comportamento di questo metodo è non specificato.
+}
+
+\method{Pop}{\emptyset}{TElem} {
+Estrae e restituisce l'elemento di testa corrente presente in coda. In caso di coda vuota il comportamento di questo metodo è non specificato.
+}
+
+\method{Somma}{\emptyset}{TElem} {
+Restituisce la somma di tutti gli elementi presenti in coda.
+}
+
+\method{Svuota}{\emptyset}{\emptyset} {
+Svuota la coda.
+}
+
+\method{Count}{\emptyset}{unsigned int} {
+Restituisce il numero di elementi presenti nella coda.
+}
+
+\method{Empty}{\emptyset}{bool} {
+Predicato vero se la coda è vuota, falso altrimenti.
+}
+
+\end{methodslist}
+
+Si realizzi una funzione \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+Nessuno dei metodi della classe può utilizzare operazioni che coinvolgono gli stream di input ed output (\cod{cin} e \cod{cout}). La scrittura e la lettura su stream sono concesse esclusivamente all'interno del programma \cod{main()}.

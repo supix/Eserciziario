@@ -1,0 +1,43 @@
+\exercise{Push Greater}
+Si realizzi in linguaggio Java il tipo di dato astratto \cod{Pila} mediante uso del costrutto \cod{class} del linguaggio e ricorrendo ad un'implementazione dinamica. Il tipo degli elementi della pila sia il tipo \cod{int}.
+
+Di seguito è riportata la specifica dei metodi pubblici da implementare per la classe \cod{Pila}.
+
+\begin{methodslist}
+
+\method{Pila}{\emptyset}{\emptyset} {
+Costruttore senza parametri.
+}
+
+\method{push}{int}{\emptyset} {
+Aggiunge sulla pila l'elemento specificato.
+}
+
+\method{pushGreater}{int}{boolean} {
+Aggiunge sulla pila l'elemento specificato esclusivamente se esso è maggiore dell'elemento di testa corrente. Nel caso in cui la pila sia vuota l'aggiunta è sempre eseguita. Restituisce \cod{true} oppure \cod{false} a seconda che l'aggiunta sia stata eseguita oppure no.
+}
+
+\method{top}{\emptyset}{int} {
+Restituisce l'elemento di testa corrente della pila (ma non lo estrae). In caso di pila vuota il comportamento di questo metodo è non specificato.
+}
+
+\method{pop}{\emptyset}{int} {
+Estrae e restituisce l'elemento di testa corrente della pila. In caso di pila vuota il comportamento di questo metodo è non specificato.
+}
+
+\method{svuota}{\emptyset}{\emptyset} {
+Svuota la pila.
+}
+
+\method{count}{\emptyset}{int} {
+Restituisce il numero di elementi presenti nella pila.
+}
+
+\method{empty}{\emptyset}{boolean} {
+Predicato vero se la pila è vuota, falso altrimenti.
+}
+\end{methodslist}
+
+Si realizzi una classe \cod{Main} dotata di un metodo \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+Nessuno dei metodi della classe può operare con i canali di input/output (per es. \cod{System.out}). L'interfacciamento con l'utente per la lettura e la visualizzazione dei dati sono concessi esclusivamente all'interno della classe \cod{Main}.

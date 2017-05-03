@@ -1,0 +1,40 @@
+\exercise{Coda a Priorità}
+Si realizzi in linguaggio C++ il tipo di dato astratto \cod{PriorityQueue} mediante uso del costrutto \cod{class} del linguaggio. Il tipo \cod{TElem} degli elementi della coda sia il tipo \cod{int}. La struttura permette di accodare elementi che possono avere due differenti livelli di priorità: \textsf{high} (alta) e \textsf{low} (bassa). Un elemento a bassa priorità viene sempre accodato alla struttura. Un elemento a priorità alta ha invece la precedenza sugli elementi a priorità bassa, ma non sugli elementi a priorità alta eventualmente già presenti nella struttura.
+
+Di seguito è riportata la specifica dei metodi pubblici da implementare per la classe \cod{Coda}.
+
+\begin{methodslist}
+
+\method{PriorityQueue}{\emptyset}{\emptyset} {
+Costruttore.
+}
+
+\method{\~{}PriorityQueue}{\emptyset}{\emptyset} {
+Distruttore.
+}
+
+\method{PushLow}{TElem}{\emptyset} {
+Accoda un elemento a bassa priorità.
+}
+
+\method{PushHigh}{TElem}{\emptyset} {
+Accoda un elemento ad alta priorità.
+}
+
+\method{Pop}{\emptyset}{TElem} {
+Estrae e restituisce il primo elemento ad altà priorità o, in sua assenza, il primo elemento a bassa priorità. In caso di coda vuota il comportamento di questo metodo è non specificato.
+}
+
+\method{Svuota}{\emptyset}{\emptyset} {
+Svuota la coda.
+}
+
+\method{Empty}{\emptyset}{bool} {
+Predicato vero se la coda è vuota, falso altrimenti.
+}
+
+\end{methodslist}
+
+Si realizzi una funzione \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+Nessuno dei metodi della classe può utilizzare operazioni che coinvolgono gli stream di input ed output (\cod{cin} e \cod{cout}). La scrittura e la lettura su stream sono concesse esclusivamente all'interno del programma \cod{main()}.

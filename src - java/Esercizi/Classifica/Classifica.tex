@@ -1,0 +1,36 @@
+\exercise{Classifica}
+Si realizzi in linguaggio Java il tipo di dato astratto \cod{Classifica} mediante uso del costrutto \cod{class} del linguaggio. L'implementazione deve essere realizzata mediante puntatori ed allocazione dinamica della memoria. Gli elementi della lista siano della classe \cod{Squadra}, modellata con un nome (di classe \cod{String}) ed un punteggio (di tipo \cod{int}).
+
+Di seguito è riportata la specifica dei metodi pubblici da implementare per la classe \cod{Classifica}.
+
+\begin{methodslist}
+
+\method{Classifica}{\emptyset}{\emptyset} {
+Costruttore.
+}
+
+\method{aggiungi}{Nome, int}{int} {
+Se la squadra non è già presente, la aggiunge alla struttura e le assegna il punteggio specificato. Nel caso di squadra già presente, aggiunge il punteggio specificato a quello già totalizzato. Restituisce il numero di punti correntemente totalizzati dalla squadra.
+}
+
+\method{svuota}{\emptyset}{\emptyset} {
+Svuota la struttura.
+}
+
+\method{toString}{\emptyset}{String} {
+Restituisce la rappresentazione testuale della struttura dati, contenente nome e punteggio di tutte le squadre in ordine decrescente di punteggio.
+}
+
+\method{count}{\emptyset}{int} {
+Conta gli elementi contenuti nella struttura.
+}
+
+\end{methodslist}
+
+Si realizzi una classe \cod{Main} dotata di un metodo \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+Nessuno dei metodi della classe può operare con i canali di input/output (per es. \cod{System.out}). L'interfacciamento con l'utente per la lettura e la visualizzazione dei dati sono concessi esclusivamente all'interno della classe \cod{Main}.
+
+\begin{footnotesize}
+Suggerimento: l'aggiornamento di un punteggio nella struttura può essere convenientemente realizzato attraverso la composizione di un'eliminazione ed un inserimento ordinato.
+\end{footnotesize}

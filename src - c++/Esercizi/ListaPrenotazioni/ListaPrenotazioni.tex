@@ -1,0 +1,54 @@
+\exercise{Lista Prenotazioni}
+Si realizzi in linguaggio C++ il tipo di dato astratto \cod{ListaPrenotazioni} mediante uso del costrutto \cod{class} del linguaggio. La lista deve memorizzare le prenotazioni di studenti ad un generico evento (uno ed uno solo). Gli elementi della lista siano del tipo \cod{Prenotazione} specificato di seguito:
+
+\begin{codequote}
+  typedef int Matricola;
+  typedef char Nome[30];
+
+  struct Prenotazione {
+    Matricola mat;
+    Nome nom;
+  };
+\end{codequote}
+
+I metodi da implementare per la classe \cod{ListaPrenotazioni} siano conformi alla seguente interfaccia.
+
+\begin{methodslist}
+
+\method{ListaPrenotazioni}{int}{\emptyset} {
+Costruttore con parametro intero. Il parametro indica il numero massimo di posti disponibili per l'evento, oltre i quali non deve essere possibile inserire ulteriori prenotazioni.
+}
+
+\method{\~{}ListaPrenotazioni}{\emptyset}{\emptyset} {
+Distruttore.
+}
+
+\method{Prenota}{Matricola,Nome}{bool} {
+Se nella lista non è già presente alcuna altra prenotazione con lo stesso numero di matricola e se ci sono posti disponibili, inserisce una nuova prenotazione in coda alla lista. Il metodo restituisce l'esito dell'operazione.
+}
+
+\method{EliminaPrenotazione}{Matricola}{boolt} {
+Elimina dalla lista la prenotazione relativa al campo matricola specificato (se presente). Il metodo restituisce \cod{true} se è stato eliminato un elemento, \cod{false} altrimenti.
+}
+
+\method{GetPostiDisponibili}{\emptyset}{int} {
+Restituisce il numero di posti ancora disponibili.
+}
+
+\method{EsistePrenotazione}{Matricola}{bool} {
+Restituisce \cod{true} se esiste la prenotazione relativa al numero di matricola specificato, \cod{false} altrimenti.
+}
+
+\method{Svuota}{\emptyset}{\emptyset} {
+Svuota la lista.
+}
+
+\method{Stampa}{\emptyset}{\emptyset} {
+Stampa il contenuto dell'intera lista nel formato seguente: \cod{Mat\-ri\-co\-la1: Nome1, Matricola2: Nome2, Matricola3: Nome3, ...}
+}
+
+\end{methodslist}
+
+L'unico metodo della classe \cod{ListaPrenotazioni} che può utilizzare lo standard-output (\cod{cout}) è il metodo \cod{Stampa()}. Gli altri metodi (pubblici, privati o protetti) non possono fare uso degli stream di I/O.
+ 
+Si realizzi una funzione \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.

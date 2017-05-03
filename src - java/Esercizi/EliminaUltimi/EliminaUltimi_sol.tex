@@ -1,0 +1,20 @@
+\thesolution{Elimina Ultimi}
+Il metodo \cod{lasciaPrimi()} richiede di eliminare gli ``elementi di coda'' della lista, preservandone i primi \cod{n}. Bisogna dapprima considerare i seguenti casi degeneri:
+
+\begin{itemize}
+\item il numero di elementi da conservare è maggiore del numero di elementi presenti nella lista: nessun elemento va eliminato (righe 2--3);
+\item il numero degli elementi da conservare è pari a zero: tutti gli elementi vanno eliminati (righe 6--11).
+\end{itemize}
+
+Negli altri casi, bisogna dapprima scorrere attraverso le prime \cod{n} posizioni della lista (righe 17--18); i restanti elementi dovranno essere scollegati dalla lista (riga 20). L'implementazione risultante è la seguente.
+
+\bigskip
+\enablelstnum
+\inputprogram{Esercizi/EliminaUltimi/LasciaPrimi.java}
+\bigskip
+
+Il metodo \cod{eliminaUltimi()} deve eliminare gli ultimi \cod{n} elementi. Esso non differisce nella sostanza dal precedente metodo, e può essere pertanto implementato nei termini di quest'ultimo.
+
+\bigskip
+\inputprogram{Esercizi/EliminaUltimi/EliminaUltimi.java}
+\bigskip

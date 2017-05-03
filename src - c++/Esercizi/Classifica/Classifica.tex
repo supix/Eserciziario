@@ -1,0 +1,50 @@
+\exercise{Classifica}
+Si realizzi in linguaggio C++ il tipo di dato astratto \cod{Classifica} mediante uso del costrutto \cod{class} del linguaggio. L'implementazione deve essere realizzata mediante puntatori ed allocazione dinamica della memoria. Gli elementi della lista siano di tipo \cod{TElem}, definito nel modo seguente:
+
+\begin{codequote}
+  const int NMAX = 50;
+  typedef char Nome[NMAX]; //Nome delle squadre
+
+  typedef struct {
+    Nome n;
+    unsigned int punteggio;
+  } Squadra;
+
+  typedef Squadra TElem;
+\end{codequote}
+
+Di seguito è riportata la specifica dei metodi pubblici da implementare per la classe \cod{Classifica}.
+
+\begin{methodslist}
+
+\method{Classifica}{\emptyset}{\emptyset} {
+Costruttore.
+}
+
+\method{\~{}Classifica}{\emptyset}{\emptyset} {
+Distruttore.
+}
+
+\method{Aggiungi}{Nome,unsigned int}{unsigned int} {
+Se la squadra non è già presente, la aggiunge alla struttura e le assegna il punteggio specificato. Nel caso di squadra già presente, aggiunge il punteggio specificato a quello già totalizzato. Restituisce il numero di punti correntemente totalizzati dalla squadra.
+}
+
+\method{Svuota}{\emptyset}{\emptyset} {
+Svuota la struttura.
+}
+
+\method{Stampa}{\emptyset}{\emptyset} {
+Stampa la classifica delle squadre presenti nella struttura, in ordine decrescente di punteggio.
+}
+
+\method{Count}{\emptyset}{unsigned int} {
+Conta gli elementi contenuti nella struttura.
+}
+
+\end{methodslist}
+
+L'unico metodo della classe \cod{Classifica} che può utilizzare lo standard-output (\cod{cout}) è il metodo \cod{Stampa()}. Gli altri metodi (pubblici, privati o protetti) non possono fare uso degli oggetti per l'I/O.
+
+Si realizzi una funzione \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+Suggerimento: l'aggiornamento di un punteggio nella struttura può essere convenientemente realizzato attraverso la composizione di un'eliminazione ed un inserimento ordinato.

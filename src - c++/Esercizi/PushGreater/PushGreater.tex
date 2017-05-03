@@ -1,0 +1,47 @@
+\exercise{Push Greater}
+Si realizzi in linguaggio C++ il tipo di dato astratto \cod{Pila} mediante uso del costrutto \cod{class} del linguaggio e ricorrendo ad un'implementazione dinamica. Il tipo \cod{TElem} degli elementi della pila sia il tipo \cod{int}.
+
+Di seguito è riportata la specifica dei metodi pubblici da implementare per la classe \cod{Pila}.
+
+\begin{methodslist}
+
+\method{Pila}{\emptyset}{\emptyset} {
+Costruttore senza parametri.
+}
+
+\method{\~{}Pila}{\emptyset}{\emptyset} {
+Distruttore.
+}
+
+\method{Push}{TElem}{\emptyset} {
+Aggiunge sulla pila l'elemento specificato.
+}
+
+\method{PushGreater}{TElem}{bool} {
+Aggiunge sulla pila l'elemento specificato esclusivamente se esso è maggiore dell'elemento di testa corrente. Nel caso in cui la pila sia vuota l'aggiunta è sempre eseguita. Restituisce \cod{true} oppure \cod{false} a seconda che l'aggiunta sia stata eseguita oppure no.
+}
+
+\method{Top}{\emptyset}{TElem} {
+Restituisce l'elemento di testa corrente della pila (ma non lo estrae). In caso di pila vuota il comportamento di questo metodo è non specificato.
+}
+
+\method{Pop}{\emptyset}{TElem} {
+Estrae e restituisce l'elemento di testa corrente della pila. In caso di pila vuota il comportamento di questo metodo è non specificato.
+}
+
+\method{Svuota}{\emptyset}{\emptyset} {
+Svuota la pila.
+}
+
+\method{Count}{\emptyset}{unsigned int} {
+Restituisce il numero di elementi presenti nella pila.
+}
+
+\method{Empty}{\emptyset}{bool} {
+Predicato vero se la pila è vuota, falso altrimenti.
+}
+\end{methodslist}
+
+Si realizzi una funzione \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+Nessuno dei metodi della classe può utilizzare operazioni che coinvolgono gli stream di input ed output (\cod{cin} e \cod{cout}). La scrittura e la lettura su stream sono concesse esclusivamente all'interno del programma \cod{main()}.

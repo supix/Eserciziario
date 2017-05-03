@@ -1,0 +1,7 @@
+v0.88 - 09/06/2009
+  - Aggiunto l'esercizio EA.20 - SommaMinMax.
+  - Si precisa negli esercizi EL.1 ed EA.1 che i metodi per i quali e' consentito l'uso dell'oggetto cout
+    sono anche quelli invocati dai metodi di stampa (eventuali metodi privati ricorsivi di supporto).
+
+
+v0.87 - 13/01/2007

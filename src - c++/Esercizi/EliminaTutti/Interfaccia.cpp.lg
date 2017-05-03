@@ -1,0 +1,15 @@
+% Remember to use the lgrind style
+
+\Head{}
+\File{Interfaccia.cpp}{2006}{9}{6}{23:16}{164}
+\L{\LB{\K{const}_\K{int}_\V{NMAX}_=_\N{100};}}
+\L{\LB{\K{typedef}_\K{int}_\V{TElem};}}
+\L{\LB{}}
+\L{\LB{\K{class}_\V{Lista}_\{}}
+\L{\LB{\K{private:}}}
+\L{\LB{}\Tab{2}{\V{TElem}_\V{v}[\V{NMAX}];}}
+\L{\LB{}\Tab{2}{\K{int}_\V{nelem};}}
+\L{\LB{\K{public:}}}
+\L{\LB{}\Tab{2}{.\,.\,._\C{}//Qui_i_prototipi_dei_metodi_pubblici\CE{}}}
+\L{\LB{\};}\Tab{4}{}}
+\L{\LB{}}

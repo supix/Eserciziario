@@ -1,0 +1,14 @@
+\thesolution{Somma Coda}
+L'approccio in generale più efficiente per risolvere questo problema consiste nel tenere memoria in un membro privato della lista del valore della coda. Tale valore deve essere costantemente aggiornato, a cura di tutti i metodi che possono potenzialmente alterarlo: inserimento, eliminazione, svuotamento, ecc. Si noti che lo stesso metodo \cod{SommaCoda()} finisce per alterare il valore della coda. Di seguito si mostrano le implementazioni dei metodi \cod{Inserisci()} e \cod{SommaCoda()}, nelle ipotesi che la lista sia dotata di una variabile-membro privata definita come segue:
+
+\begin{codequote}
+  class Lista {
+  private:
+    ...
+    TElem valoreCoda;
+    ...
+  };
+\end{codequote}
+
+\bigskip
+\inputprogram{Esercizi/SommaCoda/SommaCoda.cpp}

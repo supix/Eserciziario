@@ -1,0 +1,44 @@
+\exercise{Coda con Perdite}
+Si realizzi in linguaggio Java il tipo di dato astratto \cod{Coda} mediante uso del costrutto \cod{class} del linguaggio. Il tipo degli elementi della coda sia il tipo \cod{int}.
+
+Di seguito è riportata la specifica dei metodi pubblici da implementare per la classe \cod{Coda}.
+
+\begin{methodslist}
+
+\method{Coda}{int}{\emptyset} {
+Costruttore con parametro intero. Il parametro indica il numero massimo di posti in coda, oltre il quale non deve essere possibile inserire ulteriori elementi.
+}
+
+\method{push}{int}{boolean} {
+Accoda l'elemento specificato. Restituisce \cod{true} in caso di elemento accodato, \cod{false} altrimenti.
+}
+
+\method{top}{\emptyset}{int} {
+Restituisce l'elemento di testa corrente della coda (ma non lo estrae). In caso di coda vuota il comportamento di questo metodo è non specificato.
+}
+
+\method{pop}{\emptyset}{int} {
+Estrae e restituisce l'elemento di testa corrente presente in coda. In caso di coda vuota il comportamento di questo metodo è non specificato.
+}
+
+\method{pop}{int}{int} {
+Estrae tanti elementi quanti specificati dal parametro di ingresso e restituisce solo il primo di questi, cioè l'elemento presente in testa precedentemente alla chiamata al metodo. Rappresenta una versione \emph{overloaded} del metodo precedente. Nel caso in cui la coda risulti vuota all'atto della chiamata al metodo, il comportamento risultante è non specificato.
+}
+
+\method{svuota}{\emptyset}{\emptyset} {
+Svuota la coda.
+}
+
+\method{count}{\emptyset}{int} {
+Restituisce il numero di elementi presenti nella coda.
+}
+
+\method{empty}{\emptyset}{boolean} {
+Predicato vero se la coda è vuota, falso altrimenti.
+}
+
+\end{methodslist}
+
+Si realizzi una classe \cod{Main} dotata di un metodo \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+Nessuno dei metodi della classe può operare con i canali di input/output (per es. \cod{System.out}). L'interfacciamento con l'utente per la lettura e la visualizzazione dei dati sono concessi esclusivamente all'interno della classe \cod{Main}.

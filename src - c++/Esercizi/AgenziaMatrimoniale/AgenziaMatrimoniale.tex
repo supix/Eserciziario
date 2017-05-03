@@ -1,0 +1,67 @@
+\exercise{Agenzia Matrimoniale}
+Si realizzi in linguaggio C++ il tipo di dato astratto \cod{AgenziaMatrimoniale} mediante uso del costrutto \cod{class} del linguaggio. L'implementazione deve essere realizzata mediante puntatori ed allocazione dinamica della memoria. Gli elementi della lista siano di tipo \cod{TElem}, definito nel modo seguente:
+
+\begin{codequote}
+  const int NMAX = 50;
+  typedef char Nome[NMAX]; //Nome Persona
+
+  struct persona;
+  typedef struct Persona{
+    Nome n;
+    bool maschio;
+    Persona* coniuge;
+  };
+  
+  typedef Persona TElem;
+\end{codequote}  
+
+Di seguito è riportata la specifica dei metodi pubblici da implementare per la classe \cod{AgenziaMatrimoniale}.
+
+\begin{methodslist}
+
+\method{AgenziaMatrimoniale}{\emptyset}{\emptyset} {
+Costruttore.
+}
+
+\method{\~{}AgenziaMatrimoniale }{\emptyset}{\emptyset} {
+Distruttore.
+}
+
+\method{AggiungiPersona}{Nome,bool}{bool} {
+Aggiunge alla struttura la persona avente nome specificato attraverso i parametri di ingresso, e indica se è maschio (parametro di ingresso pari a \cod{true}) o femmina (parametro di ingresso pari a \cod{false}) Restituisce \cod{true} in caso di inserimento avvenuto, \cod{false} altrimenti (se esiste già una persona con lo stesso nome).
+}
+
+\method{Sposa}{Nome,Nome}{bool} {
+Marca come sposate le due persone presenti nella struttura ed aventi nomi specificati dai parametri di ingresso. Restituisce l'esito dell'operazione. L'operazione fallisce nei casi seguenti:
+\begin{itemize}
+\item uno o entrambi i nomi non sono presenti nella lista;
+\item le persone specificate sono dello stesso sesso;
+\item una o entrambe le persone risultano già sposate.
+\end{itemize}
+}
+
+\method{Coniugato}{Nome}{bool, bool} {
+Restituisce due valori booleani. Il primo indica se il nome specificato è presente o meno nella lista. Se tale valore è vero, il secondo valore restituito è pari a vero se la persona dal nome specificato è coniugata, falso altrimenti.
+}
+
+\method{NumeroSposi}{\emptyset}{unsigned int} {
+Restituisce il numero delle persone coniugate nella struttura.
+}
+
+\method{NumeroCoppie}{\emptyset}{unsigned int} {
+Restituisce il numero di coppie di sposi presenti nella struttura.
+}
+
+\method{Svuota}{\emptyset}{\emptyset} {
+Svuota la struttura.
+}
+
+\method{Stampa}{\emptyset}{\emptyset} {
+Stampa il contenuto della struttura (vedi esempio ???).
+}
+
+\end{methodslist}
+
+L'unico metodo della classe \cod{AgenziaMatrimoniale} che può utilizzare lo standard-output (\cod{cout}) è il metodo \cod{Stampa()}. Gli altri metodi (pubblici, privati o protetti) non possono fare uso degli oggetti per l'I/O.
+
+Si realizzi una funzione \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.

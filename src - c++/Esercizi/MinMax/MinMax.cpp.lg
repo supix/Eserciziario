@@ -1,0 +1,19 @@
+% Remember to use the lgrind style
+
+\Head{}
+\File{MinMax.cpp}{2006}{9}{9}{0:02}{294}
+\index{Lista::MinMax}\Proc{Lista::MinMax}\L{\LB{\K{void}_\V{Lista::MinMax}(\V{TElem}\&_\V{min},_\V{TElem}\&_\V{max})_\K{const}_\{}}
+\L{\LB{}\Tab{2}{\K{if}_(\V{first})_\{}}
+\L{\LB{}\Tab{4}{\V{min}_=_\V{first}\-\!\>\V{el};}}
+\L{\LB{}\Tab{4}{\V{max}_=_\V{first}\-\!\>\V{el};}}
+\L{\LB{}\Tab{4}{\V{PRec}_\V{p}_=_\V{first}\-\!\>\V{succ};}}
+\L{\LB{}\Tab{4}{}}
+\L{\LB{}\Tab{4}{\K{while}_(\V{p})_\{}}
+\L{\LB{}\Tab{6}{\K{if}_(\V{p}\-\!\>\V{el}_\<_\V{min})}}
+\L{\LB{}\Tab{8}{\V{min}_=_\V{p}\-\!\>\V{el};}}
+\L{\LB{}\Tab{6}{\K{if}_(\V{p}\-\!\>\V{el}_\>_\V{max})}}
+\L{\LB{}\Tab{8}{\V{max}_=_\V{p}\-\!\>\V{el};}\Tab{25}{}}
+\L{\LB{}\Tab{6}{\V{p}_=_\V{p}\-\!\>\V{succ};}}
+\L{\LB{}\Tab{4}{\}}}
+\L{\LB{}\Tab{2}{\}}}
+\L{\LB{\}}}

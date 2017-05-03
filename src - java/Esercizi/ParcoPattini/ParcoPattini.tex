@@ -1,0 +1,49 @@
+\exercise{Parco Pattini}
+La ditta Sax gestisce una pista di pattinaggio e dispone di un parco pattini. I pattini, tutti dello stesso modello, vengono fittati ai clienti a tempo, in base alla taglia della calzatura richiesta, che si suppone di tipo intero. Si implementi in linguaggio Java la classe \cod{ParcoPattini} utile ad una prima informatizzazione del processo di gestione della pista.
+
+Si implementi la struttura conformemente all'interfaccia specificata di seguito.
+
+\begin{methodslist}
+
+\method{ParcoPattini}{\emptyset}{\emptyset}{
+Costruttore senza parametri. Inizializza una struttura che contiene un parco pattini vuoto.
+}
+
+\method{aggiungiPattini}{int}{\emptyset}{
+Aggiunge al parco un paio di pattini della misura specificata.
+}
+
+\method{svuota}{\emptyset}{\emptyset}{
+Svuota il parco pattini.
+}
+
+\method{numeroTotPattini}{\emptyset}{int}{
+Restituisce il numero di paia di pattini che costituiscono l'intero parco.
+}
+
+\method{fitta}{int}{boolean}{
+Marca come ``fittati'' un paio di pattini della taglia specificata dal parametro di ingresso. Il metodo restituisce \cod{true} se esiste almeno un paio di pattini della taglia specificata, \cod{false} altrimenti.
+
+}
+
+\method{disponibilita}{int}{int}{
+Restituisce il numero di paia di pattini disponibili per la taglia specificata.
+}
+
+\method{numeroPattini}{int}{int}{
+Restituisce il numero di paia di pattini appartenenti al parco, di data taglia (indipendentemente dal loro stato).
+}
+
+\method{restituzione}{int}{boolean}{
+Marca nuovamente come ``disponibile'' un paio di pattini della taglia specificata. Il metodo restituisce \cod{true} se effettivamente esiste un paio di pattini della taglia specificata marcati come ``fittati'', \cod{false} altrimenti.
+}
+
+\method{toString}{\emptyset}{String}{
+Restituisce in formato testuale l'intero stato della struttura.
+}
+
+\end{methodslist}
+
+Si realizzi una classe \cod{Main} dotata di un metodo \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+Nessuno dei metodi della classe può operare con i canali di input/output (per es. \cod{System.out}). L'interfacciamento con l'utente per la lettura e la visualizzazione dei dati sono concessi esclusivamente all'interno della classe \cod{Main}.

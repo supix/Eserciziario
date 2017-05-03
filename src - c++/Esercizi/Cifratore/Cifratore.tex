@@ -1,0 +1,18 @@
+\exercise{Cifratore}
+Implementare la classe \cod{Cifratore} con la capacità di cifrare stringhe di caratteri attraverso uno slittamento del codice ASCII dei caratteri componenti la stringa (c.d.~codice di Cesare). L'interfaccia della classe sia la seguente:
+  
+\begin{methodslist}
+
+\method{Cifratore}{int}{\emptyset} {
+Costruttore della classe. Imposta la costante intera di slittamento che il cifratore utilizza per crittografare le stringhe.
+}
+
+\method{Cifra}{char}{char} {
+Metodo di cifratura. Accetta la stringa da cifrare e ne restituisce la versione cifrata. La cifratura consiste in uno slittamento (\texttt{shift}) dei codici ASCII di ogni singolo carattere della stringa.
+}
+
+\method{Decifra}{char}{char} {
+Metodo di decifratura. Accetta la stringa cifrata attraverso il metodo \cod{Cifra()} e ne restituisce nuovamente la versione decifrata.
+}
+
+\end{methodslist}

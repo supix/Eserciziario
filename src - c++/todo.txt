@@ -1,0 +1,18 @@
+- Controllare che i nomi dei files mostrati nel testo prima dei listati corrispondano con i files su disco
+
+- Controllare tutti gli iostream.h, l'eventuale presenza di string.h (inutile), e la presenza di stdlib.h
+
+- Compilare tutti i sorgenti
+- Font Times New Roman in tutti i disegni
+- cambiare \bigskip \lgrindinput (?)
+- sfondo sui listati?
+- controllare che l'inserimento dei files nelle soluzioni rispetti una convenzione omogenea (moduli, non moduli)
+- i nomi dei files (per le soluzioni con i moduli) devono essere sottolnieati a comunque enfatizzati)
+- overfull box
+- uniformare i listati col package listings (hint: cerca verbatim)
+
+
+- SL.1: numerare le righe di lista.h e commentarle una per una?
+- SL.1: spiegare meglio la tecnica di #include _LISTA_H_
+- SL.3: (coda pari) aggiungere lo svolgimento ricorsivo
+- SA.19: (ContaNodiSottoalbero) aggiustare la formttazione di domanda e soluzione.

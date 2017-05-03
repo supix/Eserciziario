@@ -1,0 +1,32 @@
+\exercise{Lista Statica}
+Si realizzi la struttura dati \cod{Lista} secondo un approccio all'allocazione della memoria di tipo statico. Il tipo \cod{TElem} degli elementi contenuti sia uguale al tipo \cod{int} del linguaggio. La lista sia dotata dei metodi riportati di seguito.
+
+\begin{methodslist}
+
+\method{Lista}{\emptyset}{\emptyset}{
+Costruttore.
+}
+
+\method{\~{}Lista}{\emptyset}{\emptyset}{
+Distruttore.
+}
+
+\method{InserisciInCoda}{TElem}{\emptyset}{
+Inserisce un elemento in coda alla lista.
+}
+
+\method{Svuota}{\emptyset}{\emptyset}{
+Svuota la lista.
+}
+
+\method{Count}{\emptyset}{int}{
+Restituisce il numero degli elementi contenuti nella lista.
+}
+
+\method{Stampa}{\emptyset}{\emptyset}{
+Stampa sullo standard output tutti gli elementi contenuti nella lista.
+}
+
+\end{methodslist}
+
+L'unico metodo della classe Lista che può utilizzare lo standard-output (\cod{cout}) è il metodo \cod{Stampa()}. Gli altri metodi (pubblici, privati o protetti) non possono fare uso delle funzionalità di stampa.

@@ -1,0 +1,11 @@
+\thesolution{Occorrenza Massima}
+Per risolvere il problema bisogna apportare alcune modifiche alla classe \cod{Al\-be\-ro\-Bi\-na\-rio} dell'esercizio §\ref{Ex:Albero Binario}. In particolare va modificato il costruttore, perché acquisisca il valore \cod{occMax}. Inoltre, il metodo ricorsivo \cod{\_ag\-giun\-gi\-E\-lem()} ora deve restituire non più solo il valore del nodo creato, ma anche il valore \cod{boolean} che indica l'esito dell'inserimento. \`E pertanto opportuno confezionare una classe, che chiameremo \cod{Da\-ti\-Ag\-giun\-ta} con visibilità privata, che convoglierà fuori dal metodo ricorsivo i due valori richiesti. Le modifiche descritte sono mostrate nel listato seguente.
+
+\inputprogram{Esercizi/MaxOcc/SintesiModifiche.java}
+
+Particolare attenzione merita il metodo \cod{\_ag\-giun\-gi\-E\-lem()}, che si occupa dell'inserimento nell'albero
+dell'elemento specificato dal parametro di ingresso, nel rispetto del vincolo delle occorrenze massime. Esso si basa sulla proprietà secondo la quale, durante l'inserimento di un elemento in un albero binario ordinato, bisogna necessariamente attraversare tutti gli eventuali altri nodi contenenti lo stesso valore da inserire. \`E possibile dunque discendere attraverso l'albero in cerca della posizione in cui aggiungere l'elemento e, contemporaneamente, tenere il conteggio dell'occorrenza delle eventuali repliche, interrompendo prematuramente l'inserimento in caso di raggiungimento del numero massimo di occorrenze.
+
+L'implementazione dei metodi \cod{ag\-giun\-gi\-E\-lem()} (pubblico non ricorsivo) e \cod{\_ag\-giun\-gi\-E\-lem} (privato ricorsivo) è riportata di seguito.
+
+\inputprogram{Esercizi/MaxOcc/MaxOcc.java}

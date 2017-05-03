@@ -1,0 +1,19 @@
+\thesolution{Push If}
+Nella parte privata della classe sono dichiarati i seguenti membri:
+
+\begin{codequote}
+	public class Pila {
+		...
+		private Record top;
+		private int numEl;
+		private final int maxPush;
+		private int currPush;
+		...
+	}
+\end{codequote}
+
+La variabile membro \cod{maxpush} tiene memoria di qual è il numero di inserimenti massimi consecutivi ammessi; il suo valore è inizializzato dal costruttore al valore del parametro di ingresso e mai più variato durante il ciclo di vita delle istanze della classe. La sua marcatura con l'attributo \cod{final} abilita proprio tali controlli da parte del compilatore. La variabile membro \cod{currpush} tiene memoria del numero di inserimenti consecutivi correntemente effettuati. Ogni chiamata al metodo \cod{push()} deve verificare che questo parametro non ecceda il valore massimo consentito. Il metodo privato \cod{\_push()} è implementato come una classica push su coda, così come disponibile nell'esercizio §\ref{Ex:Push Greater}.
+
+Di seguito si riporta l'implementazione dei metodi richiesti dalla traccia.
+
+\inputprogram{Esercizi/PushIf/Pila.java}

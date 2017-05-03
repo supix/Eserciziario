@@ -1,0 +1,17 @@
+\thesolution{Lista Semplicemente Collegata}%{LinkedList}
+Di seguito si riporta il file \cod{Lista.java} contenente la definizione della classe \cod{Lista}. Come richiesto dalla traccia, la lista è semplicemente collegata e le sue celle sono rappresentate dalla classe \cod{Record}, definita all'interno della classe \cod{Lista}. Grazie al modificatore di accesso \cod{private}, la classe \cod{Record} resta invisibile agli utenti della classe contenitore. Dall'interfaccia della classe \cod{Lista} non traspare la sua natura di lista semplicemente collegata. I dettagli implementativi restano pertanto nascosti, nel rispetto del principio dell'\emph{information hiding}.
+
+In questa implementazione il costruttore dovrebbe avere il compito di inizializzare le variabili-membro della classe, che in questo caso sono \cod{first} e \cod{numEl}. L'inizializzazione dovrebbe consistere nelle seguenti due istruzioni:
+
+\begin{codequote}
+	first = null;
+	numEl = 0;
+\end{codequote}
+
+In assenza di queste due linee, però, le specifiche del linguaggio Java indicano che \cod{first} viene inizializzato a \cod{null} (default per gli oggetti) e \cod{numEl} a \cod{0} (default per gli interi). Tale inizializzazione è pertanto superflua e il costruttore può rimanere vuoto.
+
+\inputmodule{Lista.java}{Esercizi/LinkedList/Lista.java}
+
+Il modulo \cod{Main.java}, di seguito riportato, consente di effettuare il testing di tutte le funzionalità disponibili nella classe \cod{Lista}. L'interfacciamento con l'utente è testuale e basato su console.
+
+\inputmodule{Main.java}{Esercizi/LinkedList/Main.java}

@@ -1,0 +1,53 @@
+\exercise{Parco Pattini}
+La ditta Sax gestisce una pista di pattinaggio e dispone di un parco pattini. I pattini, tutti dello stesso modello, vengono fittati ai clienti a tempo, in base alla taglia della calzatura richiesta. Si implementi in linguaggio C++ la classe \cod{ParcoPattini} utile ad una prima automatizzazione nella gestione della pista. Data la definizione del tipo Taglia:
+
+\begin{codequote}
+  typedef unsigned int Taglia;
+\end{codequote}
+
+si implementi la struttura conformemente all'interfaccia specificata di seguito.
+
+\begin{methodslist}
+
+\method{ParcoPattini}{\emptyset}{\emptyset}{
+Costruttore senza parametri. Inizializza una struttura che contiene un parco pattini vuoto.
+}
+
+\method{\~{}ParcoPattini}{\emptyset}{\emptyset}{
+Distruttore.
+}
+
+\method{AggiungiPattini}{Taglia}{\emptyset}{
+Aggiunge al parco un paio di pattini della misura specificata.
+}
+
+\method{Svuota}{\emptyset}{\emptyset}{
+Svuota il parco pattini.
+}
+
+\method{NumeroTotPattini}{\emptyset}{unsigned int}{
+Restituisce il numero di paia di pattini che costituiscono l'intero parco.
+}
+
+\method{Fitta}{Taglia}{bool}{
+Marca come ``fittati'' un paio di pattini della taglia specificata dal parametro di ingresso. Il metodo restituisce \cod{true} se esiste almeno un paio di pattini della taglia specificata, \cod{false} altrimenti.
+
+}
+
+\method{Disponibilita}{Taglia}{unsigned int}{
+Restituisce il numero di paia di pattini disponibili per la taglia specificata.
+}
+
+\method{NumeroPattini}{Taglia}{unsigned int}{
+Restituisce il numero di paia di pattini appartenenti al parco, di data taglia (indipendentemente dal loro stato).
+}
+
+\method{Restituzione}{Taglia}{bool}{
+Marca nuovamente come ``disponibile'' un paio di pattini della taglia specificata. Il metodo restituisce \cod{true} se effettivamente esisteva un paio di pattini della taglia specificata marcati come ``fittati'', \cod{false} altrimenti.
+}
+
+\method{Stampa}{\emptyset}{\emptyset}{
+Stampa a video lo stato dell'intero parco pattini.
+}
+
+\end{methodslist}

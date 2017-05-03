@@ -1,0 +1,20 @@
+% Remember to use the lgrind style
+
+\Head{}
+\File{EliminaTutti.cpp}{2006}{9}{6}{23:26}{487}
+\index{Lista::EliminaTutti}\Proc{Lista::EliminaTutti}\L{\LB{\K{int}_\V{Lista::EliminaTutti}(\K{const}_\V{TElem}\&_\V{el})_\{}}
+\L{\LB{}\Tab{2}{\K{int}_\V{j}_=_\N{0};}}
+\L{\LB{}\Tab{2}{\K{int}_\V{count}_=_\N{0};}}
+\L{\LB{}\Tab{2}{\K{for}_(\K{int}_\V{i}_=_\N{0};_\V{i}_\<_\V{nelem};_\V{i}++)_\{}}
+\L{\LB{}\Tab{4}{\K{if}_(\V{v}[\V{i}]_==_\V{el})_\C{}//elemento_trovato\CE{}}}
+\L{\LB{}\Tab{6}{\V{count}++;_\C{}//incremento_il_contatore_e_non_ricopio_l{'}elemento\CE{}}}
+\L{\LB{}\Tab{4}{\K{else}_\{}}
+\L{\LB{}\Tab{6}{\K{if}_(\V{i}_!=_\V{j})_\C{}//i_e_j_sono_diversi?_(è_inutile_ricopiare_se_i_==_j)\CE{}}}
+\L{\LB{}\Tab{8}{\V{v}[\V{j}]_=_\V{v}[\V{i}];_\C{}//lo_ricopio_nel_vettore_ripulito\CE{}}}
+\L{\LB{}\Tab{6}{\V{j}++;_\C{}//il_vettore_ripulito_ha_ora_un_elemento_in_più\CE{}}}
+\L{\LB{}\Tab{4}{\}}}
+\L{\LB{}\Tab{2}{\}}\Tab{7}{}}
+\L{\LB{}\Tab{2}{}}
+\L{\LB{}\Tab{2}{\V{nelem}_=_\V{nelem}_\-_\V{count};}}
+\L{\LB{}\Tab{2}{\K{return}_\V{count};}}
+\L{\LB{\}}}

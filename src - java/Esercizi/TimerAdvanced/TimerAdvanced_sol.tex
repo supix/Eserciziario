@@ -1,0 +1,24 @@
+\thesolution{Timer Avanzato}
+Il primo dei requisiti aggiuntivi imposti dalla traccia suggerisce intuitivamente che il timer è una sorta di accumulatore che tiene memoria della durata complessiva degli intervalli di tempo cronometrati fino ad un certo istante. Infatti l'esecuzione di un nuovo conteggio fornisce un contributo che va a sommarsi a tutti gli eventuali contributi precedenti. 
+
+Ai fini dello svolgimento di questo esercizio, il valore corrente del cronometro può essere pertanto considerato come la composizione di due contributi:
+\begin{itemize}
+\item la somma di tutti gli intervalli di tempo cronometrati nel passato, cioè compresi tra un segnale di START ed uno di STOP;
+\item l'eventuale contributo del conteggio corrente, se il timer è attivo.
+\end{itemize}
+
+\`{E} dunque possibile pensare al timer come una classe dotata di due membri privati:
+\begin{description}
+\item{\cod{storedTime}}: contiene la somma di tutti i conteggi passati già terminati; questo membro va aggiornato al termine di ogni conteggio;
+\item{\cod{startTime}}: contiene l'istante di inizio dell'eventuale conteggio in corso; vale $0$ se il timer è inattivo.
+\end{description}
+In questo modo, all'arrivo del messaggio GETTIME, è sufficiente restituire il valore del membro \cod{storedTime}, aggiungendo eventualmente la differenza tra l'istante attuale e l'istante \cod{startTime}, se \cod{startTime} è diverso da zero (cioè se c'è un conteggio in corso).
+
+Dal momento che spesso sorge la necessità di valutare se c'è un conteggio in corso oppure no, in questa implementazione lo svolgimento di tale servizio è stato incapsulato nell'opportuno metodo privato
+
+\begin{codequote}
+    private boolean isRunning();
+\end{codequote}
+
+\bigskip
+\inputprogram{Esercizi/TimerAdvanced/TimerAdvanced.java}

@@ -1,0 +1,49 @@
+\exercise{Coda con Perdite}
+Si realizzi in linguaggio C++ il tipo di dato astratto \cod{Coda} mediante uso del costrutto \cod{class} del linguaggio. Il tipo \cod{TElem} degli elementi della coda sia il tipo \cod{int}.
+
+Di seguito è riportata la specifica dei metodi pubblici da implementare per la classe \cod{Coda}.
+
+\begin{methodslist}
+
+\method{Coda}{unsigned int}{\emptyset} {
+Costruttore con parametro intero. Il parametro indica il numero massimo di posti in coda, oltre il quale non deve essere possibile inserire ulteriori elementi.
+}
+
+\method{\~{}Coda}{\emptyset}{\emptyset} {
+Distruttore.
+}
+
+\method{Push}{TElem}{bool} {
+Accoda l'elemento specificato. Restituisce \cod{true} in caso di elemento accodato, \cod{false} altrimenti.
+}
+
+\method{Top}{\emptyset}{TElem} {
+Restituisce l'elemento di testa corrente della coda (ma non lo estrae). In caso di coda vuota il comportamento di questo metodo è non specificato.
+}
+
+\method{Pop}{\emptyset}{TElem} {
+Estrae e restituisce l'elemento di testa corrente presente in coda. In caso di coda vuota il comportamento di questo metodo è non specificato.
+}
+
+\method{Pop}{unsigned int}{TElem} {
+Estrae tanti elementi quanti specificati dal parametro di ingresso e restituisce solo il primo di questi, cioè l'elemento presente in testa precedentemente alla chiamata al metodo. Rappresenta una versione \emph{overloaded} del metodo precedente. Nel caso in cui la coda risulti vuota all'atto della chiamata al metodo, il comportamento risultante è non specificato.
+}
+
+\method{Svuota}{\emptyset}{\emptyset} {
+Svuota la coda.
+}
+
+\method{Count}{\emptyset}{unsigned int} {
+Restituisce il numero di elementi presenti nella coda.
+}
+
+
+\method{Empty}{\emptyset}{bool} {
+Predicato vero se la coda è vuota, falso altrimenti.
+}
+
+\end{methodslist}
+
+Si realizzi una funzione \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+Nessuno dei metodi della classe può utilizzare operazioni che coinvolgono gli stream di input ed output (\cod{cin} e \cod{cout}). La scrittura e la lettura su stream sono concesse esclusivamente all'interno del programma \cod{main()}.

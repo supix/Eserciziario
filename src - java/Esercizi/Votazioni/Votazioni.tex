@@ -1,0 +1,35 @@
+\exercise{Votazioni}
+Si supponga di voler gestire un exit-poll elettorale. Ad ogni intervistato all'uscita dal seggio si chiede il partito per cui ha votato. In ogni momento bisogna poi essere in grado di dire quanti voti ha ottenuto ciascun partito e qual è la distribuzione dei voti tra i partiti.
+Mediante l'uso del costrutto \cod{class} del linguaggio Java, si realizzi una struttura dati adatta all'uopo. Si supponga, per semplicità, che ogni partito è identificato con un codice intero, e si ignorino i voti bianchi e nulli. Di seguito è riportata la specifica dei metodi pubblici da implementare per la classe \cod{Votazioni}.
+
+\begin{methodslist}
+
+\method{Votazioni}{\emptyset}{\emptyset} {
+Costruttore.
+}
+
+\method{aggiungiVoto}{int}{int} {
+Aggiunge un voto al partito avente il codice specificato dal parametro di ingresso. Restituisce il numero di voti accumulati fino a quel momento dal partito.
+}
+
+\method{svuota}{\emptyset}{\emptyset} {
+Svuota la struttura.
+}
+
+\method{getVotiPartito}{int}{int} {
+Restituisce il numero di voti ottenuto dal partito avente il codice specificato dal parametro di ingresso.
+}
+
+\method{getNumeroVoti}{\emptyset}{int} {
+Restituisce il numero totale di voti.
+}
+
+\method{toString}{\emptyset}{String} {
+Restituisce in formato testuale una rappresentazione dello stato della struttura dati.
+}
+
+\end{methodslist}
+
+Si realizzi una classe \cod{Main} dotata di un metodo \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+Nessuno dei metodi della classe può operare con i canali di input/output (per es. \cod{System.out}). L'interfacciamento con l'utente per la lettura e la visualizzazione dei dati sono concessi esclusivamente all'interno della classe \cod{Main}.

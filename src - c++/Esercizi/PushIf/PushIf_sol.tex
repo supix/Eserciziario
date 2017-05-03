@@ -1,0 +1,19 @@
+\thesolution{Push If}
+Nella parte privata della classe sono dichiarati i seguenti membri:
+
+\begin{codequote}
+  class Pila {
+  private:
+    ...
+    const unsigned int _maxpush;
+    unsigned int _currpush;
+    void _Push(const TElem& e);
+    ...
+  };  
+\end{codequote}
+
+La variabile membro \cod{\_maxpush} tiene memoria di qual è il numero di inserimenti massimi consecutivi ammessi; il suo valore è inizializzato dal costruttore al valore del parametro di ingresso e mai più variato durante il ciclo di vita delle istanze della classe. La variabile membro \cod{\_currpush} tiene memoria del numero di inserimenti consecutivi correntemente effettuati. Ogni chiamata al metodo \cod{Push()} deve verificare che questo parametro non ecceda il valore massimo consentito. Il metodo privato \cod{\_Push()} è implementato come una classica \cod{Push()}.
+
+Di seguito si riporta l'implementazione dei metodi richiesti dalla traccia.
+
+\inputprogram{Esercizi/PushIf/Pila.cpp}

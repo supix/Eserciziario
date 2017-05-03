@@ -1,0 +1,11 @@
+\thesolution{Occorrenza Massima}
+L'interfaccia della classe \cod{AlberoBinario} da realizzare è mostrata di seguito, con enfasi sulle modifiche da applicare alla versione della classe presentata in §\ref{Ex:Albero Binario}.
+
+\inputprogram{Esercizi/MaxOcc/AlberoBinario.h}
+
+Particolare attenzione merita la funzione \cod{Inserisci()}. Tale funzione ricorsiva si occupa dell'inserimento nell'albero
+dell'elemento specificato dal parametro di ingresso, nel rispetto del vincolo delle occorrenze massime. Essa si basa sulla proprietà secondo la quale, durante l'inserimento di un elemento in un albero binario ordinato, bisogna necessariamente attraversare tutti gli eventuali altri nodi contenenti lo stesso valore da inserire. \`{E} possibile dunque discendere attraverso l'albero in cerca della posizione in cui aggiungere l'elemento e, contemporaneamente, tenere il conteggio dell'occorrenza delle eventuali repliche, interrompendo prematuramente l'inserimento in caso di raggiungimento del numero massimo di occorrenze.
+
+L'implementazione dei metodi dichiarati è riportata di seguito.
+
+\inputprogram{Esercizi/MaxOcc/AlberoBinario.cpp}

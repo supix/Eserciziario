@@ -1,0 +1,7 @@
+\thesolution{Min e Max}
+La ricerca del minimo e del massimo può essere condotta secondo un approccio iterativo. Nel listato che segue, si assume inizialmente che il minimo ed il massimo siano entrambi rappresentati dall'elemento di testa (linee 12 e 13). Successivamente si scandiscono in sequenza gli elementi della lista. Ogni volta che viene individuato un elemento minore del minimo corrente (linea 17), il minimo corrente viene aggiornato (linea 18). Analogo discorso vale per il massimo (linee 19 e 20).
+
+Come appare chiaro dalle specifiche, il metodo \cod{minMax} contiene due parametri di uscita, di tipo intero. In Java un metodo può restituire al massimo un valore, all'occorrenza anche strutturato. \`E pertanto necessario definire una nuova classe, che chiamiamo \cod{MinMax}, deputata a veicolare i due valori interi al di fuori del metodo \cod{minMax}.
+
+\enablelstnum
+\inputprogram{Esercizi/MinMax/MinMax.java}

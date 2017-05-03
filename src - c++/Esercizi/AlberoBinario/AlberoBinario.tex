@@ -1,0 +1,50 @@
+\exercise{Albero Binario}
+Realizzare la classe \cod{AlberoBinario}. Il tipo \cod{TElem} dei suoi elementi sia il tipo \cod{int} e gli elementi risultino ordinati secondo la relazione di ordinamento crescente per gli interi. L'implementazione di tutti i metodi sia basata su appositi metodi ricorsivi. L'interfaccia della classe sia la seguente.
+  
+\begin{methodslist}
+
+\method{AlberoBinario}{\emptyset}{\emptyset} {
+Costruttore della struttura.
+}
+
+\method{AlberoBinario}{AlberoBinario}{\emptyset} {
+Costruttore di copia.
+}
+
+\method{\~{}AlberoBinario}{\emptyset}{\emptyset} {
+Distruttore della struttura.
+}
+
+\method{AggiungiElem}{TElem}{\emptyset} {
+Metodo di aggiunta di un elemento all'albero.
+}
+
+\method{InAlb}{TElem}{bool} {
+Ricerca un elemento nell'albero. Restituisce \cod{true} nel caso in cui l'elemento specificato sia presente nell'albero, \cod{false} altrimenti.
+}
+
+\method{Elimina}{TElem}{\emptyset} {
+Elimina l'elemento specificato dall'albero.
+}
+
+\method{Svuota}{\emptyset}{\emptyset} {
+Svuota la struttura.
+}
+
+\method{PreOrdine}{\emptyset}{\emptyset} {
+Effettua una visita in pre-ordine dell'albero, stampando tutti gli elementi sullo standard output.
+}
+
+\method{PostOrdine}{\emptyset}{\emptyset} {
+Effettua una visita in post-ordine dell'albero, stampando tutti gli elementi sullo standard output.
+}
+
+\method{InOrdine}{\emptyset}{\emptyset} {
+Effettua una visita in ordine dell'albero, stampando tutti gli elementi sullo standard output.
+}
+
+Gli unici metodi della classe \cod{AlberoBinario} che possono utilizzare direttamente o indirettamente lo standard-output (\cod{cout}) sono i metodi di visita dell'albero (\cod{InOrdine()}, \cod{PreOrdine()}, \cod{PostOrdine()} e gli eventuali metodi privati di supporto da questi invocati). Gli altri metodi (pubblici, privati o protetti) non possono fare uso delle funzionalità di stampa.
+
+Si realizzi una funzione \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+\end{methodslist}

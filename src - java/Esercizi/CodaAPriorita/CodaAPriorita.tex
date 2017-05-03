@@ -1,0 +1,36 @@
+\exercise{Coda a Priorità}
+Si realizzi in linguaggio Java il tipo di dato astratto \cod{PriorityQueue} mediante uso del costrutto \cod{class} del linguaggio. Il tipo degli elementi della coda sia il tipo \cod{int}. La struttura permette di accodare elementi che possono avere due differenti livelli di priorità: \textsf{high} (alta) e \textsf{low} (bassa). Un elemento a bassa priorità viene sempre accodato alla struttura. Un elemento a priorità alta ha invece la precedenza sugli elementi a priorità bassa, ma non sugli elementi a priorità alta eventualmente già presenti nella struttura.
+
+Di seguito è riportata la specifica dei metodi pubblici da implementare per la classe \cod{Coda}.
+
+\begin{methodslist}
+
+\method{PriorityQueue}{\emptyset}{\emptyset} {
+Costruttore.
+}
+
+\method{pushLow}{int}{\emptyset} {
+Accoda un elemento a bassa priorità.
+}
+
+\method{pushHigh}{int}{\emptyset} {
+Accoda un elemento ad alta priorità.
+}
+
+\method{pop}{\emptyset}{int} {
+Estrae e restituisce il primo elemento ad altà priorità o, in sua assenza, il primo elemento a bassa priorità. In caso di coda vuota il comportamento di questo metodo è non specificato.
+}
+
+\method{svuota}{\emptyset}{\emptyset} {
+Svuota la coda.
+}
+
+\method{empty}{\emptyset}{boolean} {
+Predicato vero se la coda è vuota, falso altrimenti.
+}
+
+\end{methodslist}
+
+Si realizzi una classe \cod{Main} dotata di un metodo \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+Nessuno dei metodi della classe può operare con i canali di input/output (per es. \cod{System.out}). L'interfacciamento con l'utente per la lettura e la visualizzazione dei dati sono concessi esclusivamente all'interno della classe \cod{Main}.

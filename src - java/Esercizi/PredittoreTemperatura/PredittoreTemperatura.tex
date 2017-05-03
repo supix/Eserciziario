@@ -1,0 +1,24 @@
+\exercise{Predittore di Temperatura}
+Realizzare la classe \cod{TempPredictor} che svolga la funzione di predittore di temperatura. Tale oggetto deve essere capace di fornire una stima della temperatura in un certo istante futuro di tempo. La stima è operata a partire da dati presenti e passati forniti dall'utente sui valori di temperatura misurati attraverso ipotetici sensori.
+
+Si supponga che i tempi siano espressi con numeri interi in un ipotetico riferimento temporale. Si supponga inoltre che la stima sia ottenuta mediante estrapolazione lineare delle ultime due temperature fornite dall'utente della classe. Per esempio, se l'utente comunica all'oggetto che la temperatura all'istante $0$ è pari a $14$° e che all'istante $5$ è pari a $16$°, una richiesta della stima della temperatura all'istante $10$ produrrebbe come risultato $18$°.
+
+Si consideri la seguente interfaccia della classe.
+     
+\begin{methodslist}
+
+\method{TempPredictor}{int, float}{\emptyset} {
+Costruttore della classe. Accetta in ingresso una prima lettura reale della temperatura (il parametro \cod{float}), insieme all'istante in cui questa è stata campionata da un ipotetico sensore (il parametro \cod{int}).
+}
+
+\method{setTemp}{int, float}{\emptyset} {
+Fornisce al predittore un ulteriore valore di temperatura campionato ed il relativo istante di campionamento.
+}
+
+\method{estimateTemp}{int}{float} {
+Richiede al predittore di effettuare una stima della temperatura in un particolare istante di tempo specificato.
+}
+
+\end{methodslist}
+
+Il costruttore accetta in ingresso un primo valore della temperatura ad un certo istante di tempo. In assenza di altri dati la stima sarà pari proprio a questo valore. Qualsiasi chiamata ad \cod{estimateTemp()}, cioè, fornirà come risultato il valore di temperatura specificato all'atto della chiamata del costruttore\footnote{Ciò permette al predittore di operare non appena divenga disponibile un primo campionamento della temperatura.}. Successivamente l'utente comunicherà all'oggetto nuovi valori della temperatura attraverso ripetute chiamate al metodo \cod{setTemp()}, specificandone anche i relativi istanti di tempo.

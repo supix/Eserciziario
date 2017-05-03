@@ -1,0 +1,40 @@
+\exercise{Lista Prenotazioni}
+Si realizzi in linguaggio Java il tipo di dato astratto \cod{ListaPrenotazioni} mediante uso del costrutto \cod{class} del linguaggio. La lista deve memorizzare le prenotazioni di studenti ad un singolo generico evento. Gli elementi della lista siano del tipo \cod{Prenotazione} modellata con una matricola (di tipo \cod{int}) ed un nome (di classe \cod{String}).
+
+I metodi da implementare per la classe \cod{ListaPrenotazioni} siano conformi alla seguente interfaccia.
+
+\begin{methodslist}
+
+\method{ListaPrenotazioni}{int}{\emptyset} {
+Costruttore con parametro intero. Il parametro indica il numero massimo di posti disponibili per l'evento, oltre i quali non deve essere possibile inserire ulteriori prenotazioni.
+}
+
+\method{prenota}{int, String}{boolean} {
+Se nella lista non è già presente alcuna altra prenotazione con lo stesso numero di matricola e se ci sono posti disponibili, inserisce una nuova prenotazione in coda alla lista. Il metodo restituisce l'esito dell'operazione.
+}
+
+\method{eliminaPrenotazione}{int}{boolean} {
+Elimina dalla lista la prenotazione relativa al campo matricola specificato (se presente). Il metodo restituisce \cod{true} se è stato eliminato un elemento, \cod{false} altrimenti.
+}
+
+\method{getPostiDisponibili}{\emptyset}{int} {
+Restituisce il numero di posti ancora disponibili.
+}
+
+\method{esistePrenotazione}{int}{boolean} {
+Restituisce \cod{true} se esiste la prenotazione relativa al numero di matricola specificato, \cod{false} altrimenti.
+}
+
+\method{svuota}{\emptyset}{\emptyset} {
+Svuota la lista.
+}
+
+\method{toString}{\emptyset}{String} {
+Restituisce la rappresentazione testuale della struttura dati nel formato seguente: \cod{Mat\-ri\-co\-la1: Nome1, Matricola2: Nome2, Matricola3: Nome3, ...}
+}
+
+\end{methodslist}
+
+Si realizzi una classe \cod{Main} dotata di un metodo \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+Nessuno dei metodi della classe può operare con i canali di input/output (per es. \cod{System.out}). L'interfacciamento con l'utente per la lettura e la visualizzazione dei dati sono concessi esclusivamente all'interno della classe \cod{Main}.

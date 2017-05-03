@@ -1,0 +1,53 @@
+\exercise{Lista Della Spesa}
+Si realizzi in linguaggio C++ il tipo di dato astratto \cod{ListaDellaSpesa} mediante uso del costrutto \cod{class} del linguaggio e ricorrendo ad un'implementazione dinamica. Gli elementi della lista siano del tipo \cod{Articolo} specificato di seguito:
+
+\begin{codequote}
+  typedef char Nome[20];
+  typedef float Quantita;
+
+  struct Articolo {
+    Nome n;
+    Quantita q;
+  };
+\end{codequote}
+
+Di seguito si riporta la specifica dei metodi da implementare.
+
+\begin{methodslist}
+
+\method{ListaDellaSpesa}{\emptyset}{\emptyset} {
+Costruttore.
+}
+
+\method{\~{}ListaDellaSpesa}{\emptyset}{\emptyset} {
+Distruttore.
+}
+
+\method{Aggiungi}{Nome,Quantita}{Quantita} {
+Se nella lista non è già presente alcun altro elemento con lo stesso nome, inserisce l'elemento specificato (nella quantità specificata) in coda alla lista. Nel caso in cui invece l'elemento fosse già presente nella lista, vi aggiunge la quantità specificata.
+
+Il metodo restituisce la quantità con cui l'articolo specificato è presente nella lista in seguito all'aggiunta.
+}
+
+\method{Elimina}{Nome}{bool} {
+Elimina dalla lista l'elemento avente il nome specificato (se presente).
+Il metodo restituisce \cod{true} se è stato cancellato un elemento, \cod{false} altrimenti.
+}
+
+\method{GetQuantita}{Nome}{Quantita} {
+Restituisce la quantità dell'elemento presente nella lista ed avente il nome specificato. Se l'elemento non è presente restituisce zero.
+}
+
+\method{Svuota}{\emptyset}{\emptyset} {
+Svuota la lista.
+}
+
+\method{Stampa}{\emptyset}{\emptyset} {
+Stampa il contenuto dell'intera lista nel formato \cod{Nome: Quantità, Nome: Quantità, \ldots}
+}
+
+\end{methodslist}
+
+L'unico metodo della classe \cod{Lista\-Della\-Spesa} che può stampare sullo standard\--output (\cod{cout}) è il metodo \cod{Stampa()}. Gli altri metodi (pubblici, privati o protetti) non possono fare uso delle funzionalità di stampa.
+
+Si realizzi una funzione \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.

@@ -1,0 +1,4 @@
+\thesolution{Conta Min e Max}
+Il conteggio degli elementi compresi entro un certo intervallo può essere svolto mediante una visita dell'albero. Data la proprietà di ordinamento dell'albero, non è peraltro necessario visitare completamente la struttura. Si consideri per esempio il caso in cui si debbano conteggiare gli elementi compresi nell'intervallo $(10,20)$. In occasione della visita di un ipotetico elemento pari a $5$, è inutile procedere verso il sottoalbero sinistro di tale elemento, che non ha possibilità di fornire un contributo al conteggio in corso.
+
+\inputprogram{Esercizi/ContaMinMax/AlberoBinario.cpp}

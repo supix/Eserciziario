@@ -1,0 +1,19 @@
+% Remember to use the lgrind style
+
+\Head{}
+\File{SommaLivello.cpp}{2006}{9}{18}{14:32}{287}
+\L{\LB{\C{}//Metodo_privato\CE{}}}
+\L{\LB{}}
+\index{AlberoBinario::\_SommaLivello}\Proc{AlberoBinario::\_SommaLivello}\L{\LB{\K{void}_\V{AlberoBinario::\_SommaLivello}(\K{const}_\V{PNodo}\&_\V{n},_\K{unsigned}_\K{int}_\V{i})_\{}}
+\L{\LB{}\Tab{2}{\K{if}_(\V{n})_\{}}
+\L{\LB{}\Tab{4}{\V{n}\-\!\>\V{el}_+=_\V{i};}}
+\L{\LB{}\Tab{4}{\V{\_SommaLivello}(\V{n}\-\!\>\V{sin},_\V{i}+\N{1});}}
+\L{\LB{}\Tab{4}{\V{\_SommaLivello}(\V{n}\-\!\>\V{des},_\V{i}+\N{1});}}
+\L{\LB{}\Tab{2}{\}}\Tab{7}{}}
+\L{\LB{\}}}
+\L{\LB{}}
+\L{\LB{\C{}//Metodo_pubblico\CE{}}}
+\L{\LB{}}
+\index{AlberoBinario::SommaLivello}\Proc{AlberoBinario::SommaLivello}\L{\LB{\K{void}_\V{AlberoBinario::SommaLivello}()_\{}}
+\L{\LB{}\Tab{2}{\V{\_SommaLivello}(\V{root},_\N{1});}}
+\L{\LB{\}}}

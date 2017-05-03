@@ -1,0 +1,21 @@
+% Remember to use the lgrind style
+
+\Head{}
+\File{Eliminaspare.cpp}{2006}{9}{8}{23:55}{409}
+\index{Lista::Elimina}\Proc{Lista::Elimina}\L{\LB{\K{void}_\V{Lista::Elimina}(\K{const}_\V{TElem}\&_\V{el})_\{}}
+\L{\LB{}\Tab{2}{\K{if}_(\V{first})_\{_\C{}//la_lista_non_è_vuota\CE{}}}
+\L{\LB{}\Tab{4}{\V{PRec}*_\V{pp}_=_\&\V{first};_\C{}//indirizzo_della_variabile_first\CE{}}}
+\L{\LB{}\Tab{4}{\K{bool}_\V{trovato}_=_\K{false};}}
+\L{\LB{}\Tab{4}{\K{while}_((*\V{pp})_\&\&_(!\V{trovato}))_\{}}
+\L{\LB{}\Tab{6}{\K{if}_((*\V{pp})\-\!\>\V{el}_==_\V{el})_\{}}
+\L{\LB{}\Tab{8}{\V{PRec}_\V{tbd}_=_*\V{pp};}}
+\L{\LB{}\Tab{8}{*\V{pp}_=_(*\V{pp})\-\!\>\V{succ};}}
+\L{\LB{}\Tab{8}{\K{delete}_\V{tbd};}}
+\L{\LB{}}
+\L{\LB{}\Tab{8}{\V{trovato}_=_\K{true};}}
+\L{\LB{}\Tab{8}{\V{count}\-\-;}}
+\L{\LB{}\Tab{6}{\}_\K{else}}}
+\L{\LB{}\Tab{8}{\V{pp}_=_\&((*\V{pp})\-\!\>\V{succ});}}
+\L{\LB{}\Tab{4}{\}}}
+\L{\LB{}\Tab{2}{\}}\Tab{5}{}}
+\L{\LB{\}}}

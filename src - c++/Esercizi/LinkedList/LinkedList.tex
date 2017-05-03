@@ -1,0 +1,45 @@
+\exercise{Lista Semplicemente Collegata}
+Si realizzi la struttura dati \cod{Lista}. Il tipo \cod{TElem} degli elementi contenuti sia uguale al tipo \cod{int} del linguaggio. La lista sia dotata dei metodi riportati di seguito.
+
+\begin{methodslist}
+\method{Lista}{\emptyset}{\emptyset} {
+ Costruttore senza parametri.
+}
+
+\method{Lista}{Lista}{\emptyset} {
+  Costruttore di copia.
+}
+
+\method{\~{}Lista}{\emptyset}{\emptyset} {
+  Distruttore.
+}
+
+\method{Inserisci}{TElem}{\emptyset} {
+  Inserimento in testa alla lista.
+}
+
+\method{NumeroElementi}{\emptyset}{int} {
+  Restituisce il numero degli elementi contenuti nella lista.
+}
+
+\method{Svuota}{\emptyset}{\emptyset} {
+  Svuota la lista.
+}
+
+\method{Elimina}{TElem}{\emptyset} {
+  Elimina un elemento dalla lista, se presente.
+}
+
+\method{Stampa}{\emptyset}{\emptyset} {
+  Stampa sullo standard output tutti gli elementi contenuti nella lista.
+}
+
+\method{Ricerca}{TElem}{bool} {
+  Predicato indicante la presenta di un elemento.
+}
+
+L'unico metodo della classe \cod{Lista} che può utilizzare direttamente o indirettamente lo standard-output (\cod{cout}) è il metodo \cod{Stampa()} (oltre che gli eventuali metodi ricorsivi di supporto ad esso). Gli altri metodi (pubblici, privati o protetti) non possono fare uso delle funzionalità di stampa.
+
+Si realizzi una funzione \cod{main()} che permetta di effettuare il collaudo della struttura dati realizzata.
+
+\end{methodslist}

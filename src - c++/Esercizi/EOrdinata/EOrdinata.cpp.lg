@@ -1,0 +1,13 @@
+% Remember to use the lgrind style
+
+\Head{}
+\File{EOrdinata.cpp}{2006}{9}{6}{23:39}{239}
+\index{Lista::EOrdinata}\Proc{Lista::EOrdinata}\L{\LB{\K{bool}_\V{Lista::EOrdinata}()_\K{const}_\{}}
+\L{\LB{}\Tab{2}{\K{int}_\V{i}_=_\N{0};}}
+\L{\LB{}\Tab{2}{\K{while}_(\V{i}_\<_\V{nelem}_\-_\N{1})_\{}}
+\L{\LB{}\Tab{4}{\K{if}_(\V{v}[\V{i}]_\>_\V{v}[\V{i}+\N{1}])}}
+\L{\LB{}\Tab{6}{\K{return}_\K{false};_\C{}//esce_subito_se_trova_un{'}inversione\CE{}}}
+\L{\LB{}\Tab{4}{\V{i}++;}}
+\L{\LB{}\Tab{2}{\}}}
+\L{\LB{}\Tab{2}{\K{return}_\K{true};_\C{}//esce_per_non_aver_trovato_alcuna_inversione}\Tab{63}{\CE{}}}
+\L{\LB{\}}}

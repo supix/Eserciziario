@@ -1,0 +1,15 @@
+\exercise{Operatore di Confronto}
+Implementare il metodo \cod{equal()} della classe \cod{AlberoBinario} (\cfr{Ex:Albero Binario}). Tale operatore viene invocato come mostrato nell'esempio di seguito:
+\begin{codequote}
+	boolean sonoUguali = a.equals(obj);
+\end{codequote}  
+dove \cod{a} è l'istanza della classe \cod{AlberoBinario} sulla quale avviene l'invocazione. Si noti che \cod{obj} è un'istanza della classe base \cod{Object} (da cui ereditano tutte le classi Java), coerentemente con l'implementazione del metodo \cod{equals()} già presente nella classe base, di cui questa rappresenta di fatto un \emph{override}.
+
+Di seguito si riporta la specifica del metodo da realizzare.
+  
+\begin{methodslist}
+
+\method{equals}{AlberoBinario, Object}{bool} {
+È l'operatore di confronto tra un albero ed un generico oggetto. Fornisce \cod{true} se l'oggetto in ingresso è un'istanza della classe \cod{AlberoBinario} uguale (anche strutturalmente) all'albero che riceve la chiamata, \cod{false} altrimenti.
+}
+\end{methodslist}

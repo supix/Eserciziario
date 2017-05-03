@@ -1,0 +1,18 @@
+\thesolution{Cerca Foglia}
+I metodi \cod{cercaFoglia()} e \cod{cercaNodo()} devono restituire un'informazione strutturata, costituita da due valori logici. Come di consueto, saranno utilizzate allo scopo delle classi appositamente definite. In questo caso si è scelto di realizzare questa classi come \emph{classi immutabili}. Ciò significa che il valore di ogni loro istanza viene definito all'atto della creazione e non può essere variato per tutto il ciclo di vita. Per esempio, il costruttore della classe \cod{RisultatoRicercaFoglia} è definito come segue:
+
+\enablelstnum
+\begin{codequote}
+		public RisultatoRicercaFoglia(boolean trovato,
+		        boolean foglia) {
+			this.trovato = trovato;
+			this.foglia = foglia;
+		}
+\end{codequote}
+\disablelstnum
+
+Le righe $1$ e $2$ contengono i parametri di ingresso, utili ad assegnare il valore delle omonime variabili private contenute nella classe. L'omonimia non crea alcun problema poiché, nello scope in cui sono visibili sia le variabili private che i parametri locali (righe $3$ e $4$), viene risolta utilizzando il prefisso \cod{this}. Laddove è presente \cod{this} ci si sta riferendo alla variabile membro privata. Laddove \cod{this} non è presente, si fa invece riferimento al parametro locale.
+
+Di seguito è riportata l'implementazione dei metodi pubblici e privati utili a rispondere alla traccia.
+
+\inputprogram{Esercizi/CercaFoglia/CercaFoglia.java}

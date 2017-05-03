@@ -1,0 +1,22 @@
+% Remember to use the lgrind style
+
+\Head{}
+\File{PriorityQueue.h}{2006}{9}{6}{0:11}{387}
+\L{\LB{\K{\#include}_\S{}\3coda.h\3\SE{}}}
+\L{\LB{}}
+\L{\LB{\K{class}_\V{PriorityQueue}_\{}}
+\L{\LB{\K{private:}}}
+\L{\LB{}\Tab{2}{\V{Coda}_\V{coda\_l};}}
+\L{\LB{}\Tab{2}{\V{Coda}_\V{coda\_h};}}
+\L{\LB{}\Tab{2}{}}
+\L{\LB{}\Tab{2}{\V{PriorityQueue}(\K{const}_\V{PriorityQueue}\&_\V{c});_\C{}//inibisce_la_copia.\,.\,.\CE{}}}
+\L{\LB{}\Tab{2}{\V{PriorityQueue}\&_\K{operator}=(\K{const}_\V{PriorityQueue}\&_\V{c});_\C{}//.\,.e_l{'}assegnazione\CE{}}}
+\L{\LB{\K{public:}}}
+\L{\LB{}\Tab{2}{\V{PriorityQueue}();}}
+\L{\LB{}}
+\L{\LB{}\Tab{2}{\K{void}_\V{PushLow}(\K{const}_\V{TElem}\&_\V{e});}}
+\L{\LB{}\Tab{2}{\K{void}_\V{PushHigh}(\K{const}_\V{TElem}\&_\V{e});}}
+\L{\LB{}\Tab{2}{\V{TElem}_\V{Pop}();}}
+\L{\LB{}\Tab{2}{\K{void}_\V{Clear}();}}
+\index{Empty}\Proc{Empty}\L{\LB{}\Tab{2}{\K{bool}_\V{Empty}()_\K{const};}}
+\L{\LB{\};}}

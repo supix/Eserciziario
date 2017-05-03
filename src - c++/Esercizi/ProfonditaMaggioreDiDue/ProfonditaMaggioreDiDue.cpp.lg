@@ -1,0 +1,15 @@
+% Remember to use the lgrind style
+
+\Head{}
+\File{ProfonditaMaggioreDiDue.cpp}{2006}{9}{14}{22:53}{398}
+\index{AlberoBinario::ProfMaggioreDiDue}\Proc{ProfMaggioreDiDue}\L{\LB{\K{bool}_\V{AlberoBinario::ProfMaggioreDiDue}()_\K{const}_\{}}
+\L{\LB{}\Tab{2}{\K{return}}}
+\L{\LB{}\Tab{4}{\C{}//c{'}è_la_radice_e.\,.\,.\CE{}}}
+\L{\LB{}\Tab{4}{\C{}//.\,.\,.o_esiste_il_nodo_di_sinistra_e_questo_ha_almeno_un_figlio\CE{}}}
+\L{\LB{}\Tab{4}{\C{}//oppure_esiste_il_nodo_di_destra_e_questo_ha_almeno_un_figlio.\CE{}}}
+\L{\LB{}\Tab{4}{\C{}//Tradotto_in_codice_si_ha:\CE{}}}
+\L{\LB{}\Tab{4}{\V{root}_\&\&_(}}
+\L{\LB{}\Tab{6}{(\V{root}\-\!\>\V{sin}_\&\&_(\V{root}\-\!\>\V{sin}\-\!\>\V{sin}_\|\,\|_\V{root}\-\!\>\V{sin}\-\!\>\V{des}))_\|\,\|}}
+\L{\LB{}\Tab{6}{(\V{root}\-\!\>\V{des}_\&\&_(\V{root}\-\!\>\V{des}\-\!\>\V{sin}_\|\,\|_\V{root}\-\!\>\V{des}\-\!\>\V{des}))}}
+\L{\LB{}\Tab{4}{);}}
+\L{\LB{\}}}
